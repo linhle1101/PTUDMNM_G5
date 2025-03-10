@@ -28,5 +28,15 @@ class ViDuController extends Controller
     {
         return 'tuongvyhello';
     }
+
+    function ten() {
+        return "phamhaiyen";
+    }
+
+
+function inten(){
+    return "Nguyễn Thị Thảo Nhi";
+}
+
 }
 

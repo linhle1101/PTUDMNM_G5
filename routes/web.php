@@ -38,5 +38,15 @@ Route::get('/sach','App\Http\Controllers\ViduLayoutController@sach');
 Route::get('/sach/theloai/{id}','App\Http\Controllers\ViduLayoutController@theloai');
 Route::get('/sach/detail/{id}','App\Http\Controllers\ViduLayoutController@detail');
 
+
 Route::get('/vidu/tv','App\Http\Controllers\ViduController@vidu');
+
+
+
+Route::get('/sach/detail/{id}','App\Http\Controllers\ViduLayoutController@detail');
+
+Route::get('/ten','App\Http\Controllers\ViDuController@ten');
+
+
+Route::get('/inten','App\Http\Controllers\ViduController@inten');
 
