@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class ViDuController extends Controller
 {
     //
-    function vidu1(){
-        $name = "TurtleRabbit";
+    function Linhle(){
+        $name = "TurtleRabbit01";
         return view('vidu1', ['name'=> $name]);
     }
 
