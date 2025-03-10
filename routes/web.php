@@ -38,3 +38,7 @@ Route::get('/sach','App\Http\Controllers\ViduLayoutController@sach');
 Route::get('/sach/theloai/{id}','App\Http\Controllers\ViduLayoutController@theloai');
 Route::get('/sach/detail/{id}','App\Http\Controllers\ViduLayoutController@detail');
 
+Route::get('/sach/detail/{id}','App\Http\Controllers\ViduLayoutController@detail');
+
+Route::get('/ten','App\Http\Controllers\ViDuController@ten');
+
