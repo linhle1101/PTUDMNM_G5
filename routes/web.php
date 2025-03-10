@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/vidu1', function () {
     return 'Xin chào';
 });
-Route::get('/vidu1','App\Http\Controllers\ViDuController@vidu1');
+Route::get('/vidu1','App\Http\Controllers\ViDuController@Linhle');
 
 Route::get('/vidu2','App\Http\Controllers\ViduController@vidu2');
 
