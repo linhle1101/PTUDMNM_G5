@@ -24,5 +24,9 @@ class ViDuController extends Controller
     return "Kết quả là: ".$ket_qua;
     }
 
+    function vidu()
+    {
+        return 'tuongvyhello';
+    }
 }
 
