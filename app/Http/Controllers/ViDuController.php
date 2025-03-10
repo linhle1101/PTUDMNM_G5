@@ -23,6 +23,8 @@ class ViDuController extends Controller
     $ket_qua = $so_a+$so_b;
     return "Kết quả là: ".$ket_qua;
     }
-
+function inten(){
+    return "Nguyễn Thị Thảo Nhi";
+}
 }
 
