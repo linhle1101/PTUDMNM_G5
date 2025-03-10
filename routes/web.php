@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/vidu1', function () {
     return 'Xin chào';
 });
-Route::get('/vidu1','App\Http\Controllers\ViDuController@vidu1');
+Route::get('/vidu1','App\Http\Controllers\ViDuController@Linhle');
 
 Route::get('/vidu2','App\Http\Controllers\ViduController@vidu2');
 
@@ -38,7 +38,10 @@ Route::get('/sach','App\Http\Controllers\ViduLayoutController@sach');
 Route::get('/sach/theloai/{id}','App\Http\Controllers\ViduLayoutController@theloai');
 Route::get('/sach/detail/{id}','App\Http\Controllers\ViduLayoutController@detail');
 
+
 Route::get('/sach/detail/{id}','App\Http\Controllers\ViduLayoutController@detail');
 
 Route::get('/ten','App\Http\Controllers\ViDuController@ten');
 
+
+Route::get('/inten','App\Http\Controllers\ViduController@inten');

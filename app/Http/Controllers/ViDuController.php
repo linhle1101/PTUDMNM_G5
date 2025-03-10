@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class ViDuController extends Controller
 {
     //
-    function vidu1(){
-        $name = "TurtleRabbit";
+    function Linhle(){
+        $name = "TurtleRabbit01";
         return view('vidu1', ['name'=> $name]);
     }
 
@@ -23,9 +23,15 @@ class ViDuController extends Controller
     $ket_qua = $so_a+$so_b;
     return "Kết quả là: ".$ket_qua;
     }
+
     function ten() {
         return "phamhaiyen";
     }
+
+
+function inten(){
+    return "Nguyễn Thị Thảo Nhi";
+}
 
 }
 
