@@ -17,9 +17,15 @@ Route::get('/', function () {
     return view('qlyacc');
 });
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+
 require __DIR__.'/auth.php';
 Route::get('/xemlichchieu','App\Http\Controllers\LichChieuController@xemlichchieu');
+
+require __DIR__.'/auth.php';
+
