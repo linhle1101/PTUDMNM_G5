@@ -16,12 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('qlyacc');
 });
-<<<<<<< HEAD
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-=======
->>>>>>> f7822ab8de5c8c43d6d2b8525cf6c10968fc2473
