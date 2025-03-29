@@ -1,0 +1,141 @@
+/*Tạo khung*/
+.grid-container 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-image: none;
+}
+
+/*--------------------- Phần đầu -------------------------*/
+.top-bar 
+{
+    display: flex;
+    grid-area: Head;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa các thành phần */
+    background-color: #efe0e0;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.top-bar img 
+{
+    display: block;
+    height: 40px;
+}
+.user-info
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+.tb {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+.taikhoan {
+  display: flex;
+    list-style: none;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    padding: 5px;
+}
+ul.taikhoan > li {
+  position: relative;
+}
+.taikhoan > li:hover .dangxuat {
+    display: block;
+}
+
+.dangxuat li {
+    padding: 8px 16px;
+}
+
+.dangxuat li a {
+    text-decoration: none;
+    color: black;
+}
+
+.dangxuat li a:hover {
+    color: #007bff;
+}
+.dangxuat {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+/*--------------------- Thanh Menu -------------------------*/
+.side-menu 
+{
+position: fixed;
+top: 0;
+left: 0;
+width: 200px;
+height: 100%;
+background-color: white;
+color: black;
+display: flex;
+flex-direction: column;
+padding: 15px;
+box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+visibility: hidden;
+opacity: 0;
+transform: translateX(-200px);
+transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+}
+
+.side-menu.open 
+{ 
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-toggle 
+{
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle:hover {color: red;}
+
+.side-menu h2 
+{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: black;
+}
+
+.side-menu a 
+{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.side-menu a:hover 
+{
+    background-color: #e3e3e3;
+}
+.content 
+{
+    margin-left: 20px;
+    padding: 20px;
+}
