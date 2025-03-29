@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,38 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("home");
 
-Route::get('/vidu1', function () {
-    return 'Xin chào';
-});
-Route::get('/vidu1','App\Http\Controllers\ViDuController@Linhle');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/vidu2','App\Http\Controllers\ViduController@vidu2');
+require __DIR__.'/auth.php';
 
-Route::post('/tinhtong','App\Http\Controllers\ViDuController@tinhtong');
+// Route đăng nhập
 
-Route::get('/baitap1','App\Http\Controllers\BaiTapController@baitap1');
-Route::post('/themtheloai','App\Http\Controllers\BaiTapController@themtheloai');
-
-Route::get('/baitap2','App\Http\Controllers\BaiTapController@baitap2');
-Route::post('/themtheloai2','App\Http\Controllers\BaiTapController@themtheloai2');
-
-Route::get('/layouts/trang1','App\Http\Controllers\ViduLayoutController@trang1');
-
-Route::get('/sach','App\Http\Controllers\ViduLayoutController@sach');
-Route::get('/sach/theloai/{id}','App\Http\Controllers\ViduLayoutController@theloai');
-Route::get('/sach/detail/{id}','App\Http\Controllers\ViduLayoutController@detail');
-
-
-Route::get('/vidu/tv','App\Http\Controllers\ViduController@vidu');
-
-
-
-Route::get('/sach/detail/{id}','App\Http\Controllers\ViduLayoutController@detail');
-
-Route::get('/ten','App\Http\Controllers\ViDuController@ten');
-
-
-Route::get('/inten','App\Http\Controllers\ViduController@inten');
-
+//Route::get('/login', [AuthenticatedSessionController::class, 'showLoginForm'])->name('login');
+//Route::post('/login', [AuthenticatedSessionController::class, 'login']);
