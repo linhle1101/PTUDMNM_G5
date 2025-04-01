@@ -22,16 +22,22 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/qlyphim','App\Http\Controllers\AdminController@qlyphim')
-->middleware('auth')->name("qlyphim");
-Route::get('/xoaphim','App\Http\Controllers\AdminController@xoaphim')
-->middleware('auth')->name("xoaphim");
+//->middleware('auth')
+->name("qlyphim");
+Route::post('/xoaphim','App\Http\Controllers\AdminController@xoaphim')
+//->middleware('auth')
+->name("xoaphim");
 Route::get('/themphim','App\Http\Controllers\AdminController@themphim')
-->middleware('auth')->name("themphim");
+//->middleware('auth')
+->name("themphim");
 Route::post('/addmovie','App\Http\Controllers\AdminController@addmovie')
-->middleware('auth')->name("addmovie");
-Route::get('/suaphim/{$id}','App\Http\Controllers\AdminController@suaphim')
-->middleware('auth')->name("suaphim");
+//->middleware('auth')
+->name("addmovie");
+Route::get('/suaphim/{id}','App\Http\Controllers\AdminController@suaphim')
+//->middleware('auth')
+->name("suaphim");
 Route::post('/editmovie','App\Http\Controllers\AdminController@editmovie')
-->middleware('auth')->name("editmovie");
+//->middleware('auth')
+->name("editmovie");
 
 require __DIR__.'/auth.php';

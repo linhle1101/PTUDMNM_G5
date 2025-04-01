@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="./AddFilm.css"/>
     </head>
     <body>
-        <x-account-panel>
-        @if ($errors->any())
+        <x-qly-layout>
+        <!--@if ($errors->any())
         <div style='color:red;width:30%; margin:0 auto'>
         <div >
         {{ __('Whoops! Something went wrong.') }}
@@ -24,7 +24,7 @@
         <div class="alert alert-success">
         {{ session('status') }}
         </div>
-        @endif
+        @endif-->
                 
     <script> 
     function previewFile() { var preview = document.getElementById('preview'); 
@@ -111,6 +111,6 @@
         
         </form>
     </div>
-        </x-account-panel>
+        </x-qly-layout>
     </body>
 </html>

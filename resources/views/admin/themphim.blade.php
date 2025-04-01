@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="./AddFilm.css"/>
     </head>
     <body>
-        <x-account-panel>
-        @if ($errors->any())
+        <x-qly-layout>
+        <!--@if ($errors->any())
         <div style='color:red;width:30%; margin:0 auto'>
         <div >
         {{ __('Whoops! Something went wrong.') }}
@@ -24,7 +24,7 @@
         <div class="alert alert-success">
         {{ session('status') }}
         </div>
-        @endif
+        @endif-->
                 
     <script> 
     function previewFile() { var preview = document.getElementById('preview'); 
@@ -81,9 +81,10 @@
                 <td>
                 <select name = "ma_the_loai">
                     @foreach($list_the_loai as $row)
-                <option value ="{{$row->('ma_the_loai')}}">{{$row->('ten_the_loai')}}</option>
-                </select>
-                @endforeach
+                <option value = "{{$row->ma_the_loai}}">{{$row->ten_the_loai}}</option>
+                @endforeach 
+            </select>
+                
                 </td>
                 <td></td>
                 <th><label>Đạo diễn</label></th>
@@ -110,6 +111,6 @@
         
         </form>
     </div>
-        </x-account-panel>
+        </x-qly-layout>
     </body>
 </html>

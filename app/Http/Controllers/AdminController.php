@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
     //
-    function qlyphim()
+    function qlyphim(Request $request)
     {
         $query = DB::table('phim')
         ->join('theloaiphim', 'phim.ma_the_loai', '=', 'theloaiphim.ma_the_loai')
@@ -25,26 +26,26 @@ class AdminController extends Controller
             'phim.mo_ta'
         );
 
-    // Tìm kiếm theo tên phim
-    if ($request->has('tenphim')) {
+    //Tìm kiếm theo tên phim
+    if ($request->has('tenphim') && !empty($request->input('tenphim'))) {
         $query->where('phim.ten', 'LIKE', '%' . $request->input('tenphim') . '%');
     }
 
     // Lọc theo tháng
-    if ($request->has('month')) {
+    if ($request->has('month') && !empty($request->input('month'))) {
         $query->whereMonth('phim.ngay_khoi_chieu', $request->input('month'));
     }
 
     // Phân trang (10 bản ghi mỗi trang)
     $data = $query->paginate(10);
-
+    
     return view('admin.qlyphim', compact('data'));
     }
     //Xóa phim
     function xoaphim(Request $request)
     {
         $id = $request->input("id");
-        DB::table("phim")->where("id",$id)->delete();
+        DB::table("phim")->where("ma_phim",$id)->delete();
         return redirect()->route('qlyphim')->with('status', 'Xóa thành công');
     }
     //Thêm phim

@@ -139,3 +139,122 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
     margin-left: 20px;
     padding: 20px;
 }
+/*--------------------- Phần thân -------------------------*/
+.timkiem_themmoi
+{
+    display : grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    gap:150px;
+    padding: 10px 40px;
+}
+.timkiem_themmoi div:last-child
+{
+    font-size: 20px;
+}
+.timkiem_themmoi input:last-child
+{
+    font-size: 14px;
+    text-align: center;
+}
+
+.nhap
+{
+    height: 25px;
+    width: 200px;
+}
+.timkiem 
+{
+    font-weight: bold;
+    padding: 5px;
+    font-size: 20px;
+    
+}
+
+.btn-timkiem
+{
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background-color: rgb(252, 108, 108);
+    color: #efe0e0;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.them_moi
+{
+    margin-left: 20px;
+    padding: 5px 10px;
+    font-size: 17px;
+    cursor: pointer;
+    border-color: rgb(214, 205, 214);
+    background-color: antiquewhite;
+    text-decoration: none;
+    font-weight: bold;
+    color:#000000;
+    border-radius: 8px;
+}
+body {
+    display: block;
+    margin: 0 auto;
+}
+body h2
+{
+    text-align: center;
+    margin:10px;
+    font-size: 26px;
+}
+
+.table-nv
+{
+display: flex;
+justify-content: center;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+.table-nv td,.table-nv th
+{
+    border: 1px solid #000;
+    padding:10px;
+}
+.table-nv th
+{
+    background-color: darkgray;
+}
+
+.hanh-dong a 
+{
+    text-decoration: none;
+    color:#000;
+}
+
+.hanh-dong a:hover
+{
+    text-decoration: underline;
+}
+/*Phân trang*/
+.pagination {
+    display: flex;
+    justify-content: flex-end; /* Căn phải */
+    margin-top: 20px; /* Tạo khoảng cách giữa bảng và phân trang */
+}
+.pagination a {
+    padding: 8px 12px;
+    text-decoration: none;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    color: #007bff;
+    border-radius: 4px;
+}
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+.pagination a:hover {
+    background-color: #ddd;
+    border: 1px solid #007bff;
+}
