@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin/qlyacc');
 });
-<<<<<<< HEAD
-=======
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -37,4 +34,15 @@ Route::post('/editmovie','App\Http\Controllers\AdminController@editmovie')
 ->middleware('auth')->name("editmovie");
 
 require __DIR__.'/auth.php';
->>>>>>> 6c543cf0cea362123d196bd030741563632197ab
+
+Route::get('/qlynhanvien','App\Http\Controllers\NhanvienController@qlynhanvien')
+->middleware('auth')->name("qlynhanvien");
+Route::get('/xoanhanvien','App\Http\Controllers\NhanvienController@xoanhanvien')
+->middleware('auth')->name("xoanhanvien");
+Route::get('/themnhanvien','App\Http\Controllers\NhanvienController@themnhanvien')
+->middleware('auth')->name("themnhanvien");
+Route::get('/suanhanvien','App\Http\Controllers\NhanvienController@suanhanvien')
+->middleware('auth')->name("suanhanvien");
+Route::get('/chitietnhanvien','App\Http\Controllers\NhanvienController@chitietnhanvien')
+->middleware('auth')->name("chitietnhanvien");
+
