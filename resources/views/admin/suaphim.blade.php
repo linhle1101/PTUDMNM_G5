@@ -51,7 +51,7 @@
                 <td><input type="date" name="ngay_khoi_chieu" value="{{$data->ngay_khoi_chieu}}"></td>
                 <td rowspan="5"> 
                         
-                        <img id="preview" src="{{asset('storage/movie/'.$data->file_hinhAnh)}}" alt="Hình ảnh" style="max-width: 200px;"><br>
+                        <img id="preview" src="{{asset('storage/poster/'.$data->file_hinhAnh)}}" alt="Hình ảnh" style="max-width: 200px;"><br>
                         <label for="file" >Chọn tệp:</label> 
                         <input type="file" name="file" id="file" accept="image/*" onchange="previewFile()"><br>
                         <p></p>

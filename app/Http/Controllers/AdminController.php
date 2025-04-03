@@ -133,7 +133,7 @@ class AdminController extends Controller
             //Tạo tên file bằng cách lấy tên phim -> loại bỏ các ký tự đặc biệt -> thêm dấu thời gian để tránh trùng tên
             $fileName = Str::limit(Str::slug($data["ten"],'-'),50,'') . '-' . time() . '.' . $request->file('file')->extension();
             //File được lưu vào thư mục storage/app/public/movie
-            $request->file('file')->storeAs('public/movie', $fileName);
+            $request->file('file')->storeAs('public/poster', $fileName);
             $data['file_hinhAnh'] = $fileName;
         }
         DB::table("phim")->where("ma_phim",$id)->update($data);
