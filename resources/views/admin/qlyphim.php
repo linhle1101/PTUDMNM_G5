@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<x-account-panel>
+<x-qly-layout>
     @if ($errors->any())
     <div style='color:red;width:30%; margin:0 auto'>
     <div >
@@ -96,6 +96,6 @@
         <div class="pagination">
             {{ $data->links('pagination::bootstrap-4') }}
         </div>
-    </x-account-panel>
+    </x-qly-layout>
 </body>
 </html>

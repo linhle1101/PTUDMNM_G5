@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="./AddFilm.css"/>
     </head>
     <body>
-        <x-account-panel>
+    <x-qly-layout>
         @if ($errors->any())
         <div style='color:red;width:30%; margin:0 auto'>
         <div >
@@ -110,6 +110,6 @@
         
         </form>
     </div>
-        </x-account-panel>
+    </x-qly-layout>
     </body>
 </html>

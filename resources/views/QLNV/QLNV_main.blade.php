@@ -31,6 +31,12 @@
         @endif
 
         <H2>QUẢN LÝ NHÂN VIÊN</H2>
+<!--Hiển thị thông báo sau khi thêm dữ liệu thành công -->
+                @if (session('status'))
+                    <div class="alert alert-success">
+                    {{ session('status') }}
+                    </div>
+                @endif
         <div class="timkiem_themmoi">
             <div class="timkiem">
                 <form action="{{ route('qlynhanvien') }}" method="get">
@@ -70,8 +76,8 @@
                 <td>{{$nhanvien->vaitro}}</td>
                 <td>{{$nhanvien->ngaytao}}</td>
                 <td class='hanh-dong'>
-                    <a href="{{route('suanhanvien',['id'=>$nhanvien->maNV])}}" class='btn btn-sm btn-primary'>Sửa</a>
-                    <a href="{{ route('chitietnhanvien', ['id' => $nhanvien->maNV]) }}" class="btn btn-sm btn-info">Chi tiết</a>
+                    <a href="{{route('suanhanvien',['maNV'=>$nhanvien->maNV])}}" class='btn btn-sm btn-primary'>Sửa</a>
+                    <a href="{{ route('chitietnhanvien', ['maNV' => $nhanvien->maNV]) }}" class="btn btn-sm btn-info">Chi tiết</a>
                     <form method='post' action = "{{route('xoanhanvien')}}" onsubmit="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');">
                     <input type='hidden' value='{{$nhanvien->maNV}}' name='id'>
                     <input type='submit' class='btn btn-sm btn-danger' value='Xóa'>
