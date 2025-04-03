@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\QLLC\LichChieuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,14 +18,18 @@ Route::get('/', function () {
 });
 
 
-
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 
-require __DIR__.'/auth.php';
-Route::get('/xemlichchieu','App\Http\Controllers\LichChieuController@xemlichchieu');
+require __DIR__.'/auth.php';*/
+/*Route::get('/xemlichchieu','App\Http\Controllers\QLLC\LichChieuController@xemlichchieu');*/
+Route::get('/lichChieu', [LichChieuController::class, 'lichChieu'])->name('lichChieu');
+Route::post('/lichchieudelete', [LichChieuController::class, 'lichchieudelete'])->name('lichchieudelete');
+Route::get('/lichchieuedit/{maLichChieuPhim}', [LichChieuController::class, 'lichchieuedit'])->name('lichchieuedit');
+Route::post('/saveedit', [LichChieuController::class, 'saveedit'])->name('saveedit');
 
-require __DIR__.'/auth.php';
-
+Route::get('/themlichchieu', [LichChieuController::class, 'themlichchieu'])->name('themlichchieu');
+Route::post('/them', [LichChieuController::class, 'them'])->name('them');
