@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -67,6 +68,18 @@ class AdminController extends Controller
             'mo_ta' => ['nullable', 'string'],
             'file_hinhAnh' => ['nullable', 'image']
         ]);
+        // Tìm mã phim lớn nhất hiện tại
+        $sql = DB::select("select ma_phim FROM phim ORDER BY ma_phim DESC LIMIT 1");
+    
+        $new_ma_phim = "P0001"; // Mã mặc định nếu chưa có phim nào
+    
+        if (!empty($sql)) {
+            $last_ma_phim = $sql[0]->ma_phim; // Lấy mã phim lớn nhất
+            $num = intval(substr($last_ma_phim, 1)) + 1; // Cắt bỏ ký tự 'P' và tăng số
+            $new_ma_phim = "P" . str_pad($num, 2, "0", STR_PAD_LEFT); // Tạo mã mới, ví dụ: P0002
+        }
+
+        $data["ma_phim"] = $new_ma_phim;
         $data["ten"] = $request->input("ten");
         $data["ma_the_loai"] = $request->input("ma_the_loai");
         $data["thoi_luong"] = $request->input("thoi_luong");

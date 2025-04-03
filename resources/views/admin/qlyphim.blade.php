@@ -27,8 +27,8 @@
     @endif-->
     <H2>QUẢN LÝ PHIM</H2>
     <div class="timkiem_themmoi">
-        <div class="timkiem">
-            <form action="{{ route('qlyphim') }}" method="get">
+        
+            <form action="{{ route('qlyphim') }}" method="get" class="timkiem">
                 Tên phim: <input class="nhap" list="Tên phim" name="tenphim" placeholder="Nhập từ khóa cần tìm" value="{{ request('tenphim') }}">
                                 <datalist id="Tên phim">
                                     @foreach($data as $row)
@@ -37,13 +37,9 @@
                                 </datalist>
                 <input class="btn-timkiem" type="submit" value="Tìm kiếm" name="Timkiem">
             </form>
-        </div>
-        <div>
             <a href="{{route('themphim')}}" class="them_moi">Thêm Phim</a>  
-        </div>
-        <form action="{{ route('qlyphim') }}" method="get">
-            <label for="month">Tháng</label>
-            <input type="number" min="1" max="12" step="1" value="1" name="month" id="month" value="{{ request('month') }}">
+        <form action="{{ route('qlyphim') }}" method="get" class="timkiem">
+            Tháng: <input type="number" style="height: 25px" min="1" max="12" step="1" value="1" name="month" id="month" value="{{ request('month') }}">
             <input class="btn-timkiem" type="submit" value="Lọc" name="locthang">
         </form>
     </div>

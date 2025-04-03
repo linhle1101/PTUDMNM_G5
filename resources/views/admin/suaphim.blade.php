@@ -4,7 +4,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Thêm Phim</title>
-        <link rel="stylesheet" href="./AddFilm.css"/>
+        <link rel="stylesheet" href="{{asset('css/AddFilm.css')}}"/>
     </head>
     <body>
         <x-qly-layout>
@@ -87,18 +87,18 @@
                 </td>
                 <td></td>
                 <th><label>Đạo diễn</label></th>
-                <td><input type="text" name="ten_dao_dien" value="$data->ten_dao_dien"></td>
+                <td><input type="text" name="ten_dao_dien" value="{{$data->ten_dao_dien}}"></td>
             </tr>
             <tr>
                 <th><label>Thời lượng</label></th>
-                <td><input type="text" name="thoi_luong" value="$data->thoi_luong"></td>
+                <td><input type="text" name="thoi_luong" value="{{$data->thoi_luong}}"></td>
                 <td></td>
                 <th><label>Năm sản xuất</label></th>
-                <td><input type="number" min="1900" max="2099" step="1" value="$data->nam_san_xuat" name="nam_san_xuat"></td>
+                <td><input type="number" min="1900" max="2099" step="1" value="{{$data->nam_san_xuat}}" name="nam_san_xuat"></td>
             </tr>
             <tr>
                 <th><label>Mô tả</label></th>
-                <td><textarea rows="2" cols="30" name="mo_ta" value="$data->mo_ta"></textarea></td>
+                <td><textarea rows="2" cols="30" name="mo_ta">{{$data->mo_ta}}</textarea></td>
                 <td></td>
                 
             </tr>

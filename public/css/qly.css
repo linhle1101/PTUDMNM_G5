@@ -142,34 +142,34 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
 /*--------------------- Phần thân -------------------------*/
 .timkiem_themmoi
 {
-    display : grid;
-    grid-template-columns: auto auto auto;
+    display : flex;
     align-items: center;
-    justify-content: center;
-    gap:150px;
-    padding: 10px 40px;
-}
-.timkiem_themmoi div:last-child
-{
+    justify-content: space-between;
+    gap:15px;
+    padding: 10px 10px;
+    font-weight: bold;
+    padding: 5px;
     font-size: 20px;
 }
-.timkiem_themmoi input:last-child
-{
-    font-size: 14px;
-    text-align: center;
-}
+
+
 
 .nhap
 {
     height: 25px;
     width: 200px;
 }
+.btn-timkiem, .them_moi {
+    height: 35px; /* Đồng bộ chiều cao với input */
+    line-height: 1; /* Căn chỉnh văn bản bên trong */
+}
 .timkiem 
 {
     font-weight: bold;
     padding: 5px;
-    font-size: 20px;
-    
+    font-size: 18px;
+    align-items: center;
+    margin: 0;
 }
 
 .btn-timkiem
@@ -178,7 +178,7 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
     padding: 5px 10px;
     border: none;
     background-color: rgb(252, 108, 108);
-    color: #efe0e0;
+    color: #ffffff;
     font-weight: bold;
     font-size: 14px;
     border-radius: 8px;
@@ -186,15 +186,15 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
 
 .them_moi
 {
-    margin-left: 20px;
-    padding: 5px 10px;
-    font-size: 17px;
+    padding: 5px 5px;
+    font-size: 16px;
     cursor: pointer;
     border-color: rgb(214, 205, 214);
     background-color: antiquewhite;
     text-decoration: none;
     font-weight: bold;
     color:#000000;
+    align-content: center;
     border-radius: 8px;
 }
 body {
@@ -234,6 +234,15 @@ justify-content: center;
 .hanh-dong a:hover
 {
     text-decoration: underline;
+}
+.hanh-dong {
+    white-space: nowrap; /* Ngăn chặn xuống dòng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 5px; /* Tạo khoảng cách giữa các nút */
+}
+.hanh-dong form {
+    display: inline-block; /* Giúp form không bị xuống dòng */
+    margin: 0; /* Loại bỏ margin thừa */
 }
 /*Phân trang*/
 .pagination {
