@@ -9,28 +9,54 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         <!-- Scripts -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <link rel="stylesheet" href="{{ asset('css/style_dangchieu.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style_sapchieu.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/stylett.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('css/MHTT.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/QMTT.css') }}">
+        
+
+        <!--<script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/menu.js') }}"></script>
+        
+        <script src="{{ asset('js/QMTT.js') }}"></script>-->
+
+        
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
             @include('partials.header')
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
 
-            <!-- Page Content -->
+            <!-- Nội dung trang -->
             <main>
                 {{ $slot }}
             </main>
         </div>
+
         @include('partials.footer') <!-- Nhúng Footer -->
+
+        
+
+        @stack('styles')
+        @stack('scripts')
+
+
+        <script>
+            $(document).ready(function(){
+                $(".menu-trigger").click(function(){
+                    if($(".dropdown-menu").hasClass("show"))
+                        $(".dropdown-menu").removeClass("show");
+                    else
+                        $(".dropdown-menu").addClass("show");
+                });
+            });
+        </script>
     </body>
+
 </html>
