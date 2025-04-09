@@ -19,19 +19,15 @@ class ThanhToanController extends Controller
 
         // Nếu chọn VNPay, chuyển sang trang QR
         if ($paymentMethod === 'vnpay') {
-            return redirect()->route('thanh_toan');
+            return redirect()->route('qr');
         }
 
         return back()->with('error', 'Vui lòng chọn phương thức thanh toán');
     }
 
-    public function qr()
+  
+    public function showQR()
     {
-        return view('thanh_toan');
-    }
-
-    public function success()
-    {
-        return view('thanh_toan');
+        return view('qr');
     }
 }

@@ -47,7 +47,8 @@ Route::get('/phim_sap_chieu', [PhimsapchieuController::class, 'index']);
 Route::get('/thanh_toan', [ThanhToanController::class, 'index'])->name('thanh_toan');
 Route::post('/thanh_toan/xu-ly', [ThanhToanController::class, 'handlePayment'])->name('thanh_toan.process');
 
+
 Route::get('/qr', [QRController::class, 'index'])->name('qr');
 Route::post('/qr/confirm', [QRController::class, 'confirmPayment'])->name('qr.confirm');
 
-Route::post('/thanh_toan_thanh_cong', [ThanhToanThanhCongController::class, 'success'])->name('payment.success');
+Route::post('/thanh_toan_thanh_cong', [ThanhToanThanhCongController::class, 'success'])->name('thanh_toan_thanh_cong.success');

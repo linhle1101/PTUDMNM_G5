@@ -1,5 +1,5 @@
-<x-guest-layout>
-    <x-auth-card>
+<x-app-layout>
+<x-auth-card class="py-4"> 
         <x-slot name="logo">
                 <h2 class="text-red-600 text-2xl font-bold">ĐĂNG NHẬP</h2>
         </x-slot>
@@ -51,4 +51,4 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</x-app-layout>

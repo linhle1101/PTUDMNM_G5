@@ -10,6 +10,8 @@
   .navbar {
     position: relative;
     background-color: #fdf5e6;
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
   
   /* Header */
@@ -353,8 +355,9 @@ input[type="number"] {
 }
 
 h2.movie-title {
-  font-family: "Lobster", cursive; /* Thay đổi font nếu cần */
+  font-family: Nunito; /* Thay đổi font nếu cần */
   font-size: 36px;
+  background-color: #fdf5e6;
   font-weight: bold;
   letter-spacing: 2px;
   text-align: center;
@@ -473,6 +476,7 @@ h2.movie-title::after {
 .details-btn {
   background-color: blue;
   color: white;
+   padding-bottom: 10px; 
 }
 
 .details-btn:hover {
@@ -483,6 +487,12 @@ h2.movie-title::after {
   background-color: red;
   color: white;
   margin-left: 5px;
+  font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px; 
 }
 
 .buy-btn:hover {
@@ -661,16 +671,22 @@ color: #333;
           width: 100%;
       }
      
-  .text-center {
+  .text-center movie-title {
   background-color: #fdf5e6 ;
   color: crimson;
   margin-left: 5px;
   
 }
+.text-center {
+  background-color: white ;
+  color: crimson;
+  margin-left: 5px;
+  
+}
 h2.text-center {
-  font-size: 28px; /* Tăng kích thước chữ */
+  font-size: 30px; /* Tăng kích thước chữ */
   font-weight: bold; /* Làm đậm hơn */
-  color: #000000; /* Giữ màu đỏ nổi bật */
+  color: #060505; 
 }
 
 .btn-payment {

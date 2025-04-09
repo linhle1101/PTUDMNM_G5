@@ -31,7 +31,7 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-payment">Thanh Toán</button>
+        <button type="submit" class="btn btn-primary btn-payment">Thanh Toán</button>
             </div>
 
             <div class="text-center ">
