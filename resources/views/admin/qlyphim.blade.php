@@ -3,12 +3,15 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="{{asset('css/qly.css')}}">
 </head>
 
 <body>
 <x-qly-layout>
-    <!--@if ($errors->any())
+    @if ($errors->any())
     <div style='color:red;width:30%; margin:0 auto'>
     <div >
     {{ __('Whoops! Something went wrong.') }}
@@ -24,27 +27,17 @@
     <div class="alert alert-success">
     {{ session('status') }}
     </div>
-    @endif-->
-    <H2>QUẢN LÝ PHIM</H2>
+    @endif
+    <div style='text-align:center; color:#d22121; font-weight:bold; font-size:30px; padding: 10px;'>QUẢN LÝ PHIM</div>
     <div class="timkiem_themmoi">
-        
-            <form action="{{ route('qlyphim') }}" method="get" class="timkiem">
-                Tên phim: <input class="nhap" list="Tên phim" name="tenphim" placeholder="Nhập từ khóa cần tìm" value="{{ request('tenphim') }}">
-                                <datalist id="Tên phim">
-                                    @foreach($data as $row)
-                                        <option value="{{$row->ten}}">
-                                    @endforeach
-                                </datalist>
-                <input class="btn-timkiem" type="submit" value="Tìm kiếm" name="Timkiem">
-            </form>
             <a href="{{route('themphim')}}" class="them_moi">Thêm Phim</a>  
         <form action="{{ route('qlyphim') }}" method="get" class="timkiem">
-            Tháng: <input type="number" style="height: 25px" min="1" max="12" step="1" value="1" name="month" id="month" value="{{ request('month') }}">
+            Tháng: <input type="number" style="height: 25px" min="1" max="12" step="1" name="month" id="month" value="{{ request('month', 1)}}">
             <input class="btn-timkiem" type="submit" value="Lọc" name="locthang">
         </form>
     </div>
-    
-    <table class="table-nv">
+    <table id = "cgv-table" class="table table-striped table-bordered" width="100%">
+        <thead>
         <tr> 
             <th>Mã phim</th>
             <th>Tên phim</th>
@@ -57,6 +50,8 @@
             <th>Mô tả</th>
             <th>Hành động</th>
         </tr>
+        </thead>
+        </tbody>
                 @forelse ($data as $phim)
                     <tr>
                         <td>{{$phim->ma_phim}}</td>
@@ -70,7 +65,7 @@
                         <td style='width: 150px;'>{{$phim->mo_ta}}</td>
                         <td class='hanh-dong'>
                             <a href="{{route('suaphim',['id'=>$phim->ma_phim])}}" class='btn btn-sm btn-primary'>Sửa</a> |
-                            <form method='post' action = "{{route('xoaphim')}}" onsubmit="return confirm('Bạn có chắc chắn muốn xóa cuốn sách này không?');">
+                            <form method='post' action = "{{route('xoaphim')}}" onsubmit="return confirm('Bạn có chắc chắn muốn xóa phim này không?');">
                             <input type='hidden' value='{{$phim->ma_phim}}' name='id'>
                             <input type='submit' class='btn btn-sm btn-danger' value='Xóa'>
                             {{ csrf_field() }}
@@ -80,18 +75,19 @@
                 @empty
                     <tr><td colspan='10'>Không tìm thấy phim nào.</td></tr>
                 @endforelse
+                </tbody>
     </table>
-        <div class="pagination">
-            {{ $data->links('pagination::bootstrap-4') }}
-        </div>
-        <script>
-        $(document).ready(function(){
-        $('#book-table').DataTable({
-        responsive: true,
-        "bStateSave":true
+    <div style="margin-top: 20px;">
+        Tổng số phim: {{ $total }}
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#cgv-table').DataTable({
+                responsive: true,
+                stateSave: true
+            });
         });
-        });
-        </script>
+    </script>
     </x-qly-layout>
 </body>
 </html>

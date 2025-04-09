@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin/qlyacc');
-});
+Route::get('/', 'App\Http\Controllers\AdminController@qlyphim');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

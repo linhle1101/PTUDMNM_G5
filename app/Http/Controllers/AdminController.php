@@ -27,21 +27,19 @@ class AdminController extends Controller
             'phim.mo_ta'
         );
 
-    //Tìm kiếm theo tên phim
-    if ($request->has('tenphim') && !empty($request->input('tenphim'))) {
-        $query->where('phim.ten', 'LIKE', '%' . $request->input('tenphim') . '%');
-    }
-
     // Lọc theo tháng
     if ($request->has('month') && !empty($request->input('month'))) {
         $query->whereMonth('phim.ngay_khoi_chieu', $request->input('month'));
     }
+    // Lấy dữ liệu
+    $data = $query->get();
+    // Tổng số bản ghi
+    $total = $data->count();
 
-    // Phân trang (10 bản ghi mỗi trang)
-    $data = $query->paginate(10);
-    
-    return view('admin.qlyphim', compact('data'));
+    return view('admin.qlyphim', compact('data', 'total'));
     }
+
+
     //Xóa phim
     function xoaphim(Request $request)
     {
