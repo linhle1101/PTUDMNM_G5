@@ -1,28 +1,9 @@
 
-body h2
+.body h1
 {
+    font-weight: bold;
     text-align: center;
-    margin:10px;
-    font-size: 40px;
 }
-.table-nv
-{
-    margin:20px 20px 20px 20px ;
-    border-collapse: collapse;
-    text-align:center;
-    width: 95%;
-    
-}
-.table-nv td,.table-nv th
-{
-    border: 1px solid #00000045;
-    padding:10px;
-}
-.table-nv th
-{
-    background-color: darkgray;
-}
-
 .hanh-dong a 
 {
     text-decoration: none;
@@ -79,4 +60,25 @@ body h2
 .timkiem
 {
     margin-left: 50px;
+}
+table#cgv-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table#cgv-table th, table#cgv-table td {
+    border: 1px solid #000; /* đảm bảo border đều nhau */
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table#cgv-table thead th {
+    background-color: darkgray;
+    color: black;
+    font-weight: bold;
+    border: 1px solid #000; /* đảm bảo không đậm hơn */
+}
+table#cgv-table {
+    border-collapse: collapse !important;
 }

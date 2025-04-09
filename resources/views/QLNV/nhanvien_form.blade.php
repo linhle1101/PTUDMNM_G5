@@ -85,11 +85,10 @@
                             <td><input type='text' name='ten_NV' value="{{$nhanvien->ten_NV??''}}"></td>
                             <td rowspan="5" style="vertical-align: top; text-align: left;"><label>Ảnh đại diện</label><br>
                                         @if($action=="edit")
-                                        
-                                            <img src="{{asset('storage/nhanvien_images/'.$nhanvien->file_hinhanh) }}" width="100px" class='mb-1'/>
+                                            <img src="{{asset('storage/nhanvien_images/'.$nhanvien->file_hinhanh) }}" width="150px" class='mb-1'/>
                                             <input type='hidden' value='{{$nhanvien->maNV}}' name='maNV'>
                                         @endif
-                                        <input type="file" name="file_hinhanh" accept="image/*" class="form-control-file"><br>
+                                        <input type="file" name="file_hinhanh" id="file" accept="image/*" onchange="previewFile()"><br>
                                     <p></p>
                             </td>
                         </tr>
