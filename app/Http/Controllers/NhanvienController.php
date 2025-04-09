@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class NhanvienController extends Controller
 {
@@ -75,6 +76,27 @@ class NhanvienController extends Controller
         ]);
 
         $data =$request ->except("_token");
+        // kiểm tra có bị trùng email, sdt và cccd không
+        if ($action == "add") {
+            $errors = [];
+        
+            if (DB::table('nhanvien')->where('email', $request->email)->exists()) {
+                $errors[] = 'Email đã tồn tại.';
+            }
+        
+            if (DB::table('nhanvien')->where('cccd', $request->cccd)->exists()) {
+                $errors[] = 'CCCD đã tồn tại.';
+            }
+        
+            if (DB::table('nhanvien')->where('soDienThoai', $request->soDienThoai)->exists()) {
+                $errors[] = 'Số điện thoại đã tồn tại.';
+            }
+        
+            if (!empty($errors)) {
+                return redirect()->back()->withErrors($errors)->withInput();
+            }
+        }
+
         if($action=="edit")
         $data = $request->except("_token", "maNV");
         if($request->hasFile("file_hinhanh"))

@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{asset('css/upd_add_nv.css')}}">
     
     <title>form nhân viên</title>
     <style>
          body label
         {
-            font-size:18px;
+            font-size:16px;
             font-weight: bold ;
         }
-         body input
-         {
-            padding:10px;
-            font-size:14px; 
-            height:15px;
-         }
     </style>
 </head>
 
@@ -74,102 +69,85 @@
                 <div class="body">
                 <form action="{{route('nhanviensave',['action'=>$action])}}" method = "post" enctype="multipart/form-data">
                     @if($action=="add")
-                    <div style='text-align:center;font-weight:bold;color:#15c;'><h1>THÊM THÔNG TIN NHÂN VIÊN</h1> </div>
+                    <div style='text-align:center;font-weight:bold;color:#black;'><h1>THÊM THÔNG TIN NHÂN VIÊN</h1> </div>
                     @else
                     <div style='text-align:center;font-weight:bold;color:#black;'><h1>SỬA THÔNG TIN NHÂN VIÊN</h1></div>
                     @endif
+                <div>
+                    <table class="table">
+                        <tr>
+                            <th><label>Mã nhân viên</label></th>
+                            <td><input type='text'  name='maNV' disabled value="{{$nhanvien->maNV??''}}">
+                                <input type='hidden' name='maNV' value="{{$nhanvien->maNV??''}}"><br></td>
+                            <td></td>
+                            
+                            <th><label>Tên nhân viên</label></th>
+                            <td><input type='text' name='ten_NV' value="{{$nhanvien->ten_NV??''}}"></td>
+                            <td rowspan="5" style="vertical-align: top; text-align: left;"><label>Ảnh đại diện</label><br>
+                                        @if($action=="edit")
+                                        
+                                            <img src="{{asset('storage/nhanvien_images/'.$nhanvien->file_hinhanh) }}" width="100px" class='mb-1'/>
+                                            <input type='hidden' value='{{$nhanvien->maNV}}' name='maNV'>
+                                        @endif
+                                        <input type="file" name="file_hinhanh" accept="image/*" class="form-control-file"><br>
+                                    <p></p>
+                            </td>
+                        </tr>
 
-                    <!--
-                    <label style="font-size:18px; font-weight: bold ;">Mã nhân viên</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='text' class='form-control form-control-sm' name='maNV' disabled value="{{$nhanvien->maNV??''}}">
-                    <input type='hidden' name='maNV' value="{{$nhanvien->maNV??''}}"><br>
+                        <tr>
+                            <th><label>Email</label></th>
+                            <td><input type='text' name='email' value="{{$nhanvien->email??''}}"></td>
+                            <td></td>
+                            
+                            <th><label>Giới tính</label></th>
+                            <td>
+                                <select name="gioitinh" class="form-control">
+                                    <option value="Nam" {{ (isset($nhanvien) && $nhanvien->gioitinh == 'Nam') ? 'selected' : '' }}>Nam</option>
+                                    <option value="Nữ" {{ (isset($nhanvien) && $nhanvien->gioitinh == 'Nữ') ? 'selected' : '' }}>Nữ</option>
+                                </select>
+                            </td>
+                        </tr>
 
-                    <label style="font-size:18px; font-weight: bold ;">Tên nhân viên</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='text' class='form-control form-control-sm' name='ten_NV' value="{{$nhanvien->ten_NV??''}}"><br>
+                        <tr>
+                            <th><label>CCCD</label></th>
+                            <td><input type='text' name='cccd' value="{{$nhanvien->cccd??''}}"></td>
+                            <td></td>
+                            
+                            <th><label>Dân tộc</label></th>
+                            <td><input type='text' name='dantoc' value="{{$nhanvien->dantoc??''}}"></td>
+                        </tr>
 
-                    <label style="font-size:18px; font-weight: bold ;">Email</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='text' class='form-control form-control-sm' name='email' value="{{$nhanvien->email??''}}"><br>
+                        <tr>
+                            <th><label>Ngày sinh</label></th>
+                            <td><input type='date' name='ngaysinh' value="{{$nhanvien->ngaysinh??''}}"></td>
+                            <td></td>
+                            
+                            <th><label>Số điện thoại</label></th>
+                            <td><input type='text' name='soDienThoai' value="{{$nhanvien->soDienThoai??''}}"></td>
+                        </tr>
 
-                    <label style="font-size:18px; font-weight: bold ;">Giới tính</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='text' class='form-control form-control-sm' name='gioitinh' value="{{$nhanvien->gioitinh??''}}"><br>
+                        <tr>
+                            <th><label>Ngày tham gia</label></th>
+                                <td><input type='date' name='ngaytao' value="{{$nhanvien->ngaytao ?? now()->format('Y-m-d') }}"></td>
+                                <td></td>
+                            
+                            <th><label>Địa chỉ tạm trú</label></th>
+                            <td><input type='text' name='diachitamtru' style="height: 50px;" value="{{$nhanvien->diachitamtru??''}}"></td>
+                        </tr>
 
-                    <label style="font-size:18px; font-weight: bold ;">CCCD</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='text' class='form-control form-control-sm' name='cccd' value="{{$nhanvien->cccd??''}}"><br>
-
-                    <label style="font-size:18px; font-weight: bold ;">Dân tộc</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='text' class='form-control form-control-sm' name='dantoc' value="{{$nhanvien->dantoc??''}}"><br>
-
-                    <label style="font-size:18px; font-weight: bold ;">Ngày Sinh</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='date' class='form-control form-control-sm' name='ngaysinh' value="{{$nhanvien->ngaysinh??''}}"><br>
-
-                    <label style="font-size:18px; font-weight: bold ;">Số Điện Thoại</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='text' class='form-control form-control-sm' name='soDienThoai' value="{{$nhanvien->soDienThoai??''}}"><br>
-
-                    <label style="font-size:18px; font-weight: bold ;">Địa Chỉ Thường Trú</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='text' class='form-control form-control-sm' name='diachithuongtru' value="{{$nhanvien->diachithuongtru??''}}"><br>
-
-                    <label style="font-size:18px; font-weight: bold ;">Địa Chỉ Tạm Trú</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='text' class='form-control form-control-sm' name='diachitamtru' value="{{$nhanvien->diachitamtru??''}}"><br>
-
-                    <label style="font-size:18px; font-weight: bold ;">Ngày tham gia</label><br>
-                    <input style="padding:10px; font-size:14px; height:15px;" type='date' class='form-control form-control-sm' name='ngaytao' value="{{$nhanvien->ngaytao??''}}"><br>
-
-                    <label style="font-size:18px; font-weight: bold ;">Ảnh đại diện</label><br>
-                    @if($action=="edit")
-                    <img src="{{asset('storage/nhanvien_images/'.$nhanvien->file_hinhanh) }}" width="50px" class='mb-1'/>
-                    <input style="float:left; margin-left:50px; align-ietm: center; margin-top:20px;" type ='hidden' value='{{$nhanvien->maNV}}' name='maNV'>
-                    @endif
-                    <input type="file" name="file_hinhanh" accept="image/*" class="form-control-file">
-                    {{ csrf_field() }}
-            -->
-                <div >
-                    <label> Mã nhân viên </label><br>
-                    <input type='text' class='form-control form-control-sm' name='maNV' disabled value="{{$nhanvien->maNV??''}}">
-                    <input type='hidden' name='maNV' value="{{$nhanvien->maNV??''}}"><br>
-
-                    <label> Tên nhân viên </label><br>
-                    <input type='text' class='form-control form-control-sm' name='ten_NV' value="{{$nhanvien->ten_NV??''}}"><br>
-
-                    <label> Email </label><br>
-                    <input type='text' class='form-control form-control-sm' name='email' value="{{$nhanvien->email??''}}"><br>
-
-                    <label> Giới tính </label><br>
-                    <input type='text' class='form-control form-control-sm' name='gioitinh' value="{{$nhanvien->gioitinh??''}}"><br>
-
-                    <label> CCCD </label><br>
-                    <input type='text' class='form-control form-control-sm' name='cccd' value="{{$nhanvien->cccd??''}}"><br>
-
-                    <label> Dân tộc </label><br>
-                    <input type='text' class='form-control form-control-sm' name='dantoc' value="{{$nhanvien->dantoc??''}}"><br>
-
-                    </div>
-                    
-                    <div>
-                    <label> Ngày Sinh </label><br>
-                    <input type='date' class='form-control form-control-sm' name='ngaysinh' value="{{$nhanvien->ngaysinh??''}}"><br>
-
-                    <label> Số Điện Thoại </label><br>
-                    <input type='text' class='form-control form-control-sm' name='soDienThoai' value="{{$nhanvien->soDienThoai??''}}"><br>
-
-                    <label> Địa Chỉ Thường Trú </label><br>
-                    <input type='text' class='form-control form-control-sm' name='diachithuongtru' value="{{$nhanvien->diachithuongtru??''}}"><br>
-
-                    <label> Địa Chỉ Tạm Trú </label><br>
-                    <input type='text' class='form-control form-control-sm' name='diachitamtru' value="{{$nhanvien->diachitamtru??''}}"><br>
-
-                    <label> Ngày tham gia </label><br>
-                    <input type='datetime' class='form-control form-control-sm' name='ngaytao' value="{{$nhanvien->ngaytao??''}}"><br>
-
-                    <label> Ảnh đại diện </label><br>
-                    @if($action=="edit")
-                        <img src="{{asset('storage/nhanvien_images/'.$nhanvien->file_hinhanh) }}" width="50px" class='mb-1'/>
-                        <input type='hidden' value='{{$nhanvien->maNV}}' name='maNV'>
-                    @endif
-                    <input type="file" name="file_hinhanh" accept="image/*" class="form-control-file">
-                    {{ csrf_field() }}
+                        <tr>
+                            
+                            <th><label>Địa chỉ thường trú</label></th>
+                            <td><input type='text' name='diachithuongtru' style="height: 50px;" value="{{$nhanvien->diachithuongtru??''}}"></td>
+                            <td></td>
+                        </tr>
+                    </table>
                 </div>
-                        <div style='text-align:center;'><input type='submit' class='btn btn-primary mt-1' value='Lưu'></div>
-                    </form>
+                         <div style='text-align:center;'>
+                         <button type="submit" class="btn btn-success">Lưu</button>
+                         </div> 
+                         {{ csrf_field() }}  
+        </form>
             </div> 
     </x-qly-layout>
 </body>
