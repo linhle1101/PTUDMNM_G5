@@ -37,7 +37,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/qlynhanvien','App\Http\Controllers\NhanvienController@qlynhanvien')
 ->middleware('auth')->name("qlynhanvien");
-Route::get('/xoanhanvien','App\Http\Controllers\NhanvienController@xoanhanvien')
+Route::post('/xoanhanvien','App\Http\Controllers\NhanvienController@xoanhanvien')
 ->middleware('auth')->name("xoanhanvien");
 Route::get('/chitietnhanvien','App\Http\Controllers\NhanvienController@chitietnhanvien')
 ->middleware('auth')->name("chitietnhanvien");

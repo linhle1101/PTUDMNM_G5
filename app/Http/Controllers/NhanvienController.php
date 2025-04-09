@@ -14,7 +14,7 @@ class NhanvienController extends Controller
     function qlynhanvien(Request $request)
     {
         $query = DB::table('nhanvien')
-        ->join('taikhoan_nv', 'nhanvien.maNV', '=', 'taikhoan_nv.maNV')
+        // ->join('taikhoan_nv', 'nhanvien.maNV', '=', 'taikhoan_nv.maNV')
         ->select(
             'nhanvien.maNV',
             'nhanvien.ten_NV',
@@ -39,7 +39,7 @@ class NhanvienController extends Controller
     function xoanhanvien(Request $request)
     {
         $id = $request->input("id");
-        DB::table("nhanvien")->where("ma_NV",$id)->delete();
+        DB::table("nhanvien")->where("maNV",$id)->delete();
         return redirect()->route('qlynhanvien')->with('status', 'Xóa thành công');
     }
 

@@ -158,7 +158,7 @@
                     <input type='text' class='form-control form-control-sm' name='diachitamtru' value="{{$nhanvien->diachitamtru??''}}"><br>
 
                     <label> Ngày tham gia </label><br>
-                    <input type='date' class='form-control form-control-sm' name='ngaytao' value="{{$nhanvien->ngaytao??''}}"><br>
+                    <input type='datetime' class='form-control form-control-sm' name='ngaytao' value="{{$nhanvien->ngaytao??''}}"><br>
 
                     <label> Ảnh đại diện </label><br>
                     @if($action=="edit")
