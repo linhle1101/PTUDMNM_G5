@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'App\Http\Controllers\AdminController@qlyphim');
 
 Route::get('/dashboard', function () {
@@ -37,5 +36,4 @@ Route::get('/suaphim/{id}','App\Http\Controllers\AdminController@suaphim')
 Route::post('/editmovie','App\Http\Controllers\AdminController@editmovie')
 //->middleware('auth')
 ->name("editmovie");
-
 require __DIR__.'/auth.php';
