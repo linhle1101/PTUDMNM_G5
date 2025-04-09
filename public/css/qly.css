@@ -89,7 +89,7 @@ box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 visibility: hidden;
 opacity: 0;
 transform: translateX(-200px);
-z-index: 9998; /* Đảm bảo menu nằm trên cùng */
+
 transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
 }
 
@@ -108,7 +108,7 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
     border: none;
     padding: 10px;
     cursor: pointer;
-    z-index: 9999;
+
 }
 
 .menu-toggle:hover {color: red;}
@@ -139,6 +139,8 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
 {
     margin-left: 20px;
     padding: 20px;
+
+
 }
 /*--------------------- Phần thân -------------------------*/
 .timkiem_themmoi
@@ -245,4 +247,5 @@ body h2
 .hanh-dong form {
     display: inline-block; /* Giúp form không bị xuống dòng */
     margin: 0; /* Loại bỏ margin thừa */
+
 }
