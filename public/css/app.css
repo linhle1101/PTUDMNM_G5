@@ -721,12 +721,11 @@ select {
 .z-50 {
   z-index: 50;
 }
-<<<<<<< HEAD
-=======
+
 .m-5 {
   margin: 1.25rem;
 }
->>>>>>> 6c543cf0cea362123d196bd030741563632197ab
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -788,12 +787,11 @@ select {
 .inline-flex {
   display: inline-flex;
 }
-<<<<<<< HEAD
-=======
+
 .table {
   display: table;
 }
->>>>>>> 6c543cf0cea362123d196bd030741563632197ab
+
 .grid {
   display: grid;
 }
@@ -854,12 +852,12 @@ select {
 .max-w-7xl {
   max-width: 80rem;
 }
-<<<<<<< HEAD
-=======
+
+
 .max-w-xl {
   max-width: 36rem;
 }
->>>>>>> 6c543cf0cea362123d196bd030741563632197ab
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -957,12 +955,11 @@ select {
 .border-l-4 {
   border-left-width: 4px;
 }
-<<<<<<< HEAD
-=======
+
 .border-r {
   border-right-width: 1px;
 }
->>>>>>> 6c543cf0cea362123d196bd030741563632197ab
+
 .border-t {
   border-top-width: 1px;
 }
@@ -978,13 +975,12 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
 }
-<<<<<<< HEAD
-=======
+
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
 }
->>>>>>> 6c543cf0cea362123d196bd030741563632197ab
+
 .border-indigo-400 {
   --tw-border-opacity: 1;
   border-color: rgb(129 140 248 / var(--tw-border-opacity, 1));
@@ -1062,12 +1058,11 @@ select {
 .pl-3 {
   padding-left: 0.75rem;
 }
-<<<<<<< HEAD
-=======
+
 .pr-0 {
   padding-right: 0px;
 }
->>>>>>> 6c543cf0cea362123d196bd030741563632197ab
+
 .pr-4 {
   padding-right: 1rem;
 }
@@ -1130,12 +1125,11 @@ select {
 .leading-tight {
   line-height: 1.25;
 }
-<<<<<<< HEAD
-=======
+
 .tracking-wider {
   letter-spacing: 0.05em;
 }
->>>>>>> 6c543cf0cea362123d196bd030741563632197ab
+
 .tracking-widest {
   letter-spacing: 0.1em;
 }
