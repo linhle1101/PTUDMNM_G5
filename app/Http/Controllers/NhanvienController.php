@@ -110,6 +110,14 @@ class NhanvienController extends Controller
         if($action=="add")
             {
                 DB::table("nhanvien")->insert($data);
+                DB::table("users")->insert([
+                    'name' => $request->ten_NV,
+                    'email' => $request->email,
+                    'password' => bcrypt($request->cccd),
+                    'roles' => 'Nhân viên',
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                ]);
                 $message = "Thêm thành công";
             }
         else if($action=="edit")

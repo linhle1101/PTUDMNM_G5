@@ -12,6 +12,16 @@
             font-size:16px;
             font-weight: bold ;
         }
+
+        body input[type="text"]{
+            height: 30px;
+        }
+
+        body input[type="textt"]{
+            background-color: #f0f0f0;
+            height: 30px;
+            
+        }
     </style>
 </head>
 
@@ -37,23 +47,20 @@
         @endif-->
 
 <!-- code java hiển thị ảnh preview xem trước  -->
-        <script> 
-            function previewFile() 
-                { var preview = document.getElementById('preview'); 
-                var file = document.getElementById('file').files[0]; 
-                var reader = new FileReader(); 
+    <script> 
+        function previewFile() { var preview = document.getElementById('preview'); 
+        var file = document.getElementById('file').files[0]; 
+        var reader = new FileReader(); 
 
-                reader.addEventListener('load', function () 
-                { 
-                    preview.src = reader.result; 
-                }, false);
+        reader.addEventListener('load', function () { 
+            preview.src = reader.result; 
+        }, false);
 
-                    if (file) 
-                    { 
-                        reader.readAsDataURL(file); 
-                    } 
-                } 
-        </script>
+            if (file) { 
+                reader.readAsDataURL(file); 
+            } 
+        } 
+    </script>
         @if ($errors->any())
             <div style='color:red; margin:0 auto'>
             <div >
@@ -77,7 +84,7 @@
                     <table class="table">
                         <tr>
                             <th><label>Mã nhân viên</label></th>
-                            <td><input type='text'  name='maNV' disabled value="{{$nhanvien->maNV??''}}">
+                            <td><input type='textt'  name='maNV' disabled value="{{$nhanvien->maNV??''}}">
                                 <input type='hidden' name='maNV' value="{{$nhanvien->maNV??''}}"><br></td>
                             <td></td>
                             
@@ -85,9 +92,10 @@
                             <td><input type='text' name='ten_NV' value="{{$nhanvien->ten_NV??''}}"></td>
                             <td rowspan="5" style="vertical-align: top; text-align: left;"><label>Ảnh đại diện</label><br>
                                         @if($action=="edit")
-                                            <img src="{{asset('storage/nhanvien_images/'.$nhanvien->file_hinhanh) }}" width="150px" class='mb-1'/>
+                                            <img src="{{asset('storage/nhanvien_images/'.$nhanvien->file_hinhanh) }}" width="200px" class='mb-1'/>
                                             <input type='hidden' value='{{$nhanvien->maNV}}' name='maNV'>
                                         @endif
+                                        <img id="preview" src=""  style="max-width: 200px;"><br>
                                         <input type="file" name="file_hinhanh" id="file" accept="image/*" onchange="previewFile()"><br>
                                     <p></p>
                             </td>
@@ -131,14 +139,15 @@
                                 <td></td>
                             
                             <th><label>Địa chỉ tạm trú</label></th>
-                            <td><input type='text' name='diachitamtru' style="height: 50px;" value="{{$nhanvien->diachitamtru??''}}"></td>
+                            <td><textarea type='text' name='diachitamtru' style="height:auto;min-height: 5ch;" >{{$nhanvien->diachitamtru??''}}</textarea></td>
                         </tr>
 
                         <tr>
                             
                             <th><label>Địa chỉ thường trú</label></th>
-                            <td><input type='text' name='diachithuongtru' style="height: 50px;" value="{{$nhanvien->diachithuongtru??''}}"></td>
+                            <td><textarea type='text' name='diachithuongtru' style="height:auto;min-height: 5ch;" >{{$nhanvien->diachithuongtru??''}}</textarea></td>
                             <td></td>
+                           
                         </tr>
                     </table>
                 </div>

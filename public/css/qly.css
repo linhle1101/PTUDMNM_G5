@@ -90,6 +90,7 @@ visibility: hidden;
 opacity: 0;
 transform: translateX(-200px);
 transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+z-index: 990;
 }
 
 .side-menu.open 
@@ -97,6 +98,7 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
+
 }
 
 .menu-toggle 
