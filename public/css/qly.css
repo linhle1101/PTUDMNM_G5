@@ -17,6 +17,7 @@
     background-color: #efe0e0;
     border-bottom: 1px solid #ccc;
     position: relative;
+    min-height: 50px;
 }
 .top-bar img 
 {
