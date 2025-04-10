@@ -89,7 +89,7 @@ box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 visibility: hidden;
 opacity: 0;
 transform: translateX(-200px);
-
+z-index: 1000; /* Đảm bảo menu nằm trên các phần tử khác */
 transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
 }
 
@@ -108,7 +108,7 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
     border: none;
     padding: 10px;
     cursor: pointer;
-
+    z-index: 1001; /* Đảm bảo nút nằm trên menu */
 }
 
 .menu-toggle:hover {color: red;}
