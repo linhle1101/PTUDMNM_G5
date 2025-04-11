@@ -40,9 +40,9 @@
         } 
     } 
     </script>
-    <div class="body">
+    <div class="add">
         <h1>QUẢN LÝ PHIM</h1>
-        <form action="{{route('addmovie')}}" method="post" enctype="multipart/form-data"><table class="table">
+        <form action="{{route('addmovie')}}" method="post" enctype="multipart/form-data"><table class="table-add">
             <tr>
                 <th><label>Mã phim</label></th>
                 <td><input type="text" disabled></td>

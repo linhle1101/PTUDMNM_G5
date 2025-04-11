@@ -74,47 +74,46 @@ ul.taikhoan > li {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 /*Phần thân*/
-body {
+.add {
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
+    grid-area: Body;
 }
-.body h1
+.add h1
 {
     font-weight: bold;
     text-align: center;
 }
-.body
-{
-    grid-area: Body;
-    margin: auto auto auto 50px;
-}
-.body table 
+.table-add 
 {
     margin: 10px auto auto 20px;
 }
-.table th
+.table-add th
 {
     text-align: left;
     padding: 10px;
 }
-.table td:nth-child(6)
+.table-add td:nth-child(6)
 {
     padding: 50px;
 }
-.body div input
+.add div input
 {
-    margin: 15px;
+    margin: 10px;
     border-radius: 8px;
     width: 100px;
-    height: 20px;
+    height: 25px;
     background-color: white;
+    line-height: 20px; /* Điều chỉnh khoảng cách dòng để nội dung di chuyển lên trên */
+    padding: 0;
     cursor: pointer;
+    
 }
-.body table input
+.table-add input
 {
     width: 235px;
-    height: 20px;
-
+    height: 25px;
+    vertical-align: middle;
 }
 
 /*Thanh Menu*/
