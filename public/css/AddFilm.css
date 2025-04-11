@@ -83,6 +83,7 @@ ul.taikhoan > li {
 {
     font-weight: bold;
     text-align: center;
+    color: #d22121;
 }
 .table-add 
 {
@@ -112,7 +113,7 @@ ul.taikhoan > li {
 .table-add input
 {
     width: 235px;
-    height: 25px;
+    height: 30px;
     vertical-align: middle;
 }
 
