@@ -29,7 +29,7 @@
             <input class="btn-timkiem" type="submit" value="Lọc" name="locthang">
         </form>
     </div>
-    <table id = "cgv-table" class="table table-striped table-bordered" width="100%">
+    <table id = "cgv-table" class="table table-striped table-bordered" width="95%">
         <thead>
         <tr> 
             <th>Mã phim</th>

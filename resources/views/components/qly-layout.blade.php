@@ -69,14 +69,10 @@
 
         <div class="side-menu" id="sideMenu">
             <h2>Menu</h2><a href="#">Trang Chủ</a>
-
-            <a href="Mainpage.php">Quản lý phim</a>
-
             <a href="{{route('qlyphim')}}">Quản lý phim</a>
-
             <a href="lich_chieu.php">Quản lý lịch chiếu</a>
             <a href="#">Quản lý phòng chiếu</a>
-            <a href="quanlynhanvien.php">Quản lý nhân viên</a>
+            <a href="{{route(''}}">Quản lý nhân viên</a>
         </div>
 
         <script>
