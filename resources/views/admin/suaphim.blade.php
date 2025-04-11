@@ -4,11 +4,11 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Thêm Phim</title>
-        <link rel="stylesheet" href="./AddFilm.css"/>
+        <link rel="stylesheet" href="{{asset('css/AddFilm.css')}}"/>
     </head>
     <body>
-        <x-account-panel>
-        @if ($errors->any())
+        <x-qly-layout>
+        <!--@if ($errors->any())
         <div style='color:red;width:30%; margin:0 auto'>
         <div >
         {{ __('Whoops! Something went wrong.') }}
@@ -24,7 +24,7 @@
         <div class="alert alert-success">
         {{ session('status') }}
         </div>
-        @endif
+        @endif-->
                 
     <script> 
     function previewFile() { var preview = document.getElementById('preview'); 
@@ -51,7 +51,7 @@
                 <td><input type="date" name="ngay_khoi_chieu" value="{{$data->ngay_khoi_chieu}}"></td>
                 <td rowspan="5"> 
                         
-                        <img id="preview" src="{{asset('storage/movie/'.$data->file_hinhAnh)}}" alt="Hình ảnh" style="max-width: 200px;"><br>
+                        <img id="preview" src="{{asset('storage/poster/'.$data->file_hinhAnh)}}" alt="Hình ảnh" style="max-width: 200px;"><br>
                         <label for="file" >Chọn tệp:</label> 
                         <input type="file" name="file" id="file" accept="image/*" onchange="previewFile()"><br>
                         <p></p>
@@ -87,18 +87,18 @@
                 </td>
                 <td></td>
                 <th><label>Đạo diễn</label></th>
-                <td><input type="text" name="ten_dao_dien" value="$data->ten_dao_dien"></td>
+                <td><input type="text" name="ten_dao_dien" value="{{$data->ten_dao_dien}}"></td>
             </tr>
             <tr>
                 <th><label>Thời lượng</label></th>
-                <td><input type="text" name="thoi_luong" value="$data->thoi_luong"></td>
+                <td><input type="text" name="thoi_luong" value="{{$data->thoi_luong}}"></td>
                 <td></td>
                 <th><label>Năm sản xuất</label></th>
-                <td><input type="number" min="1900" max="2099" step="1" value="$data->nam_san_xuat" name="nam_san_xuat"></td>
+                <td><input type="number" min="1900" max="2099" step="1" value="{{$data->nam_san_xuat}}" name="nam_san_xuat"></td>
             </tr>
             <tr>
                 <th><label>Mô tả</label></th>
-                <td><textarea rows="2" cols="30" name="mo_ta" value="$data->mo_ta"></textarea></td>
+                <td><textarea rows="2" cols="30" name="mo_ta">{{$data->mo_ta}}</textarea></td>
                 <td></td>
                 
             </tr>
@@ -111,6 +111,6 @@
         
         </form>
     </div>
-        </x-account-panel>
+        </x-qly-layout>
     </body>
 </html>

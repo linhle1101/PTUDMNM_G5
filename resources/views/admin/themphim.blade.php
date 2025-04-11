@@ -4,10 +4,10 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Thêm Phim</title>
-        <link rel="stylesheet" href="./AddFilm.css"/>
+        <link rel="stylesheet" href="{{asset('css/AddFilm.css')}}"/>
     </head>
     <body>
-    <x-qly-layout>
+        <x-qly-layout>
         @if ($errors->any())
         <div style='color:red;width:30%; margin:0 auto'>
         <div >
@@ -81,9 +81,10 @@
                 <td>
                 <select name = "ma_the_loai">
                     @foreach($list_the_loai as $row)
-                <option value ="{{$row->('ma_the_loai')}}">{{$row->('ten_the_loai')}}</option>
-                </select>
-                @endforeach
+                <option value = "{{$row->ma_the_loai}}">{{$row->ten_the_loai}}</option>
+                @endforeach 
+            </select>
+                
                 </td>
                 <td></td>
                 <th><label>Đạo diễn</label></th>
@@ -110,6 +111,6 @@
         
         </form>
     </div>
-    </x-qly-layout>
+        </x-qly-layout>
     </body>
 </html>
