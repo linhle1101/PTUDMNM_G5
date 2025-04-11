@@ -16,42 +16,83 @@
     </div>
   @endif
   <style>
-    .sidebar {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 100;
-      padding: 48px 0 0; /* Height of navbar */
-      box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-      background-color:#404e68!important
-      
-    }
-    .sidebar a
-    {
-        color:white!important;
-    }
-    .navbar {
-        
-        font-weight:bold;
-        margin:0 auto;
-        margin-bottom: 20px;
-     
+   /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
 
+/* Form container styles */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    width: 40%;
+    margin: 50px auto;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+form .form-control {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+form .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Button Styling */
+form .btn {
+    font-size: 14px;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+form .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Title styles */
+div[style*="text-align:center"] {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* For smaller screens */
+@media screen and (max-width: 768px) {
+    form {
+        width: 80%;
     }
-    .navbar-nav
-    {
-        margin:0 auto;
-        width:1000px;
-        
-    }
-    .navbar-nav a
-    {
-        color:black!important;
-    }
-    .content {
-      margin-left: 240px; /* Width of sidebar */
-    }
+}
+
+
   </style>
 <x-app-layout>
  <form method = 'post' action="{{route('saveinfo')}}" style='width:30%; margin:0 auto'>
@@ -66,6 +107,11 @@
  
  {{ csrf_field() }}
  <div style='text-align:center;'><input type='submit' class='btn btn-primary mt-1' value='Lưu'></div>
+ @if (session('status'))
+            <div class="alert alert-success mt-3" style="text-align: center; font-weight: bold;">
+                {{ session('status') }}
+            </div>
+        @endif
  </form>
   </x-app-layout>
  

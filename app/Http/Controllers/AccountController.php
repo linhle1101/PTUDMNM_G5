@@ -26,6 +26,6 @@ class AccountController extends Controller
             $data["phone"] = $request->input("phone");
             $data["email"] = $request->input("email");
             DB::table("users")->where("id",$id)->update($data);
-            return redirect()->route('account')->with('status', 'Cập nhật thành công');
+            return redirect()->route('account')->with('status', 'Cập nhật thành công!');
         }
 }

@@ -19,7 +19,8 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\TransactionHistoryController;
 
-Route::get('/history', [TransactionHistoryController::class, 'showHistory'])->name('history');
+Route::get('/transaction-history', [TransactionHistoryController::class, 'transactionHistory'])->middleware('auth');
+
 
 Route::get('/', function () {
     return view('welcome');
