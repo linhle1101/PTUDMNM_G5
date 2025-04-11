@@ -32,7 +32,7 @@ class AdminController extends Controller
         $query->whereMonth('phim.ngay_khoi_chieu', $request->input('month'));
     }
     // Lấy dữ liệu
-    $data = $query->get();
+    $data = $query->paginate();
     // Tổng số bản ghi
     $total = $data->count();
 

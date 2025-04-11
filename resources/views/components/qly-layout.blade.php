@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý tài khoản</title>
-
-   
-    
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="{{asset('css/qly.css')}}">
@@ -70,9 +66,9 @@
         <div class="side-menu" id="sideMenu">
             <h2>Menu</h2><a href="#">Trang Chủ</a>
             <a href="{{route('qlyphim')}}">Quản lý phim</a>
-            <a href="lich_chieu.php">Quản lý lịch chiếu</a>
+            <a href="{{route('lichChieu')}}">Quản lý lịch chiếu</a>
             <a href="#">Quản lý phòng chiếu</a>
-            <a href="{{route(''}}">Quản lý nhân viên</a>
+            <a href="{{route('qlynhanvien')}}">Quản lý nhân viên</a>
         </div>
 
         <script>
@@ -85,8 +81,6 @@
         {{$slot}}
 
         </main>
-
-    </main>
 
 </body>
 </html>
