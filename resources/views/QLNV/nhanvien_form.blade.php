@@ -73,15 +73,15 @@
             </ul>
             </div>
         @endif
-                <div class="body">
+                <div class="add">
                 <form action="{{route('nhanviensave',['action'=>$action])}}" method = "post" enctype="multipart/form-data">
                     @if($action=="add")
-                    <div style='text-align:center;font-weight:bold;color:#black;'><h1>THÊM THÔNG TIN NHÂN VIÊN</h1> </div>
+                    <div style='text-align:center;font-weight:bold;color:#d22121;'><h1>THÊM THÔNG TIN NHÂN VIÊN</h1> </div>
                     @else
-                    <div style='text-align:center;font-weight:bold;color:#black;'><h1>SỬA THÔNG TIN NHÂN VIÊN</h1></div>
+                    <div style='text-align:center;font-weight:bold;color:#d22121;'><h1>SỬA THÔNG TIN NHÂN VIÊN</h1></div>
                     @endif
                 <div>
-                    <table class="table">
+                    <table class="table-add">
                         <tr>
                             <th><label>Mã nhân viên</label></th>
                             <td><input type='textt'  name='maNV' disabled value="{{$nhanvien->maNV??''}}">

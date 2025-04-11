@@ -1,40 +1,51 @@
-body {
+.add {
     display: block;
     margin: 0 auto;
+    grid-area: Body;
 }
-.body h1
+
+.add h1
 {
     font-weight: bold;
     text-align: center;
 }
-.body
-{
-    grid-area: Body;
-    margin: auto auto auto 50px;
-}
-.body table 
+
+
+
+.add table 
 {
     margin: 10px auto auto 20px;
+
 }
-.table th
+.table-add th
 {
     text-align: left;
     padding: 10px;
 }
-.table td:nth-child(6)
+.table-add td:nth-child(6)
 {
     padding: 50px;
 }
-.body div input, select 
+.add div input
 {
     margin: 10px;
     width: 100px;
-    height: 20px;
+    height: 40px;
     background-color: white;
     border: 1px solid #ccc;
 }
 
-.body textarea 
+.add div select 
+{
+    margin: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid #ccc;
+    line-height: 15px;
+}
+
+.add textarea 
 {
     margin: 10px;
     width: 240px;
@@ -43,10 +54,10 @@ body {
     background-color: white;
     border: 1px solid #ccc;
 }
-.body table input
+.add table input
 {
     width: 235px;
-    height: 20px;
+    height: 30px;
     border: 1px solid #ccc;
 }
 
