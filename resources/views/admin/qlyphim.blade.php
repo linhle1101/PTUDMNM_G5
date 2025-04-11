@@ -70,6 +70,9 @@
                 @endforelse
                 </tbody>
     </table>
+        <div class="pagination">
+            {{ $data->links('pagination::bootstrap-4') }}
+        </div>
     <div style="margin-top: 20px;">
         Tổng số phim: {{ $total }}
     </div>

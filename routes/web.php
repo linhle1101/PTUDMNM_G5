@@ -13,23 +13,13 @@ use App\Http\Controllers\QLLC\LichChieuController;
 |
 */
 Route::get('/', 'App\Http\Controllers\AdminController@qlyphim');
-
-
-Route::get('/', function () {
-    return view('qlyacc');
-});
-
-
-/*
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 
 
-require __DIR__.'/auth.php';*/
+require __DIR__.'/auth.php';
 /*Route::get('/xemlichchieu','App\Http\Controllers\QLLC\LichChieuController@xemlichchieu');*/
 Route::get('/lichChieu', [LichChieuController::class, 'lichChieu'])->name('lichChieu');
 Route::post('/lichchieudelete', [LichChieuController::class, 'lichchieudelete'])->name('lichchieudelete');
@@ -59,3 +49,19 @@ Route::post('/editmovie','App\Http\Controllers\AdminController@editmovie')
 ->name("editmovie");
 require __DIR__.'/auth.php';
 
+Route::get('/qlynhanvien','App\Http\Controllers\NhanvienController@qlynhanvien')
+->middleware('auth')->name("qlynhanvien");
+Route::post('/xoanhanvien','App\Http\Controllers\NhanvienController@xoanhanvien')
+->middleware('auth')->name("xoanhanvien");
+Route::get('/chitietnhanvien','App\Http\Controllers\NhanvienController@chitietnhanvien')
+->middleware('auth')->name("chitietnhanvien");
+
+
+// them/capnhat nhân viên
+Route::get('/themnhanvien','App\Http\Controllers\NhanvienController@themnhanvien')
+->middleware('auth')->name("themnhanvien");
+Route::get('/suanhanvien/{maNV}','App\Http\Controllers\NhanvienController@suanhanvien')
+->middleware('auth')->name("suanhanvien");
+
+Route::post('/nhanvien/save/{action}','App\Http\Controllers\NhanvienController@nhanviensave'
+)->middleware('auth')->name("nhanviensave");
