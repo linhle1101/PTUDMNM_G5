@@ -44,7 +44,7 @@
                                 Xin chào <!--{{ Auth::user()->name }}-->
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="{{route('account')}}">Quản lý</a><li>
+                                    <li><a class="dropdown-item" href="#">Quản lý</a><li>
                                     <li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
@@ -76,7 +76,7 @@
 
             <a href="lich_chieu.php">Quản lý lịch chiếu</a>
             <a href="#">Quản lý phòng chiếu</a>
-            <a href="quanlynhanvien.php">Quản lý nhân viên</a>
+            <a href="{{route('qlynhanvien')}}">Quản lý nhân viên</a>
         </div>
 
         <script>
