@@ -81,7 +81,9 @@ function lichchieuedit($maLichChieuPhim)
      return view("QLLC.lichchieuedit", compact("cgv", "phongChieuList"));
 }
 
-function saveedit(Request $request){
+
+function saveedit(Request $request)
+{
     $request->validate([
         'maLichChieuPhim' => ['required', 'string', 'max:255'],
         'ma_phim' => ['required', 'string', 'max:255'],
@@ -89,34 +91,39 @@ function saveedit(Request $request){
         'ngayChieu' => ['required', 'string'],
         'maPhongChieuPhim' => ['required', 'string'],
         'caChieu' => ['required', 'array'],
-        
-        ]);
-        $ma_phim = $request->input('ma_phim');
-        $ngayChieu = $request->input('ngayChieu');
-        $maPhongChieuPhim = $request->input('maPhongChieuPhim');
-        $caChieu = implode(',', $request->input('caChieu', []));
-    
-                // Kiểm tra lịch chiếu trùng
-                $exists = DB::table('lichchieuphim')
-                ->where('maPhim', $ma_phim) // Sử dụng đúng tên cột
-                ->where('ngayChieu', $ngayChieu)
-                ->where('maPhongChieuPhim', $maPhongChieuPhim)
-                ->where('caChieu', $caChieu)
-                ->exists();
-        
-            if ($exists) {
-                return redirect()->back()->withErrors(['Lịch chiếu đã tồn tại. Vui lòng chọn thông tin khác.']);
-            }
-        $maLichChieuPhim = $request->input('maLichChieuPhim');
-    $data["maLichChieuPhim"] = $request->input("maLichChieuPhim");
-    $data["maPhim"] = $request->input("ma_phim");
-    $data["ngayChieu"] = $request->input("ngayChieu");
-    $data["maPhongChieuPhim"] = $request->input("maPhongChieuPhim");
-    $data["caChieu"] = implode(',', $request->input('caChieu', ''));
-    DB::table("lichchieuphim")->where("maLichChieuPhim",$maLichChieuPhim)->update($data);
-    return redirect()->route('lichChieu')->with('status', 'Cập
-    nhật thành công');
+    ]);
+
+    $ma_phim = $request->input('ma_phim');
+    $ngayChieu = $request->input('ngayChieu');
+    $maPhongChieuPhim = $request->input('maPhongChieuPhim');
+    $caChieu = implode(',', $request->input('caChieu', []));
+    $maLichChieuPhim = $request->input('maLichChieuPhim');
+
+    // Kiểm tra lịch chiếu trùng (loại trừ bản ghi hiện tại)
+    $exists = DB::table('lichchieuphim')
+        ->where('ngayChieu', $ngayChieu)
+        ->where('maPhongChieuPhim', $maPhongChieuPhim)
+        ->where('caChieu', $caChieu)
+        ->where('maLichChieuPhim', '!=', $maLichChieuPhim) // Loại trừ bản ghi hiện tại
+        ->exists();
+
+    if ($exists) {
+        return redirect()->back()->withErrors(['Lịch chiếu đã tồn tại. Vui lòng chọn thông tin khác.']);
     }
+
+    // Cập nhật dữ liệu
+    $data = [
+        'maLichChieuPhim' => $maLichChieuPhim,
+        'maPhim' => $ma_phim,
+        'ngayChieu' => $ngayChieu,
+        'maPhongChieuPhim' => $maPhongChieuPhim,
+        'caChieu' => $caChieu,
+    ];
+
+    DB::table('lichchieuphim')->where('maLichChieuPhim', $maLichChieuPhim)->update($data);
+
+    return redirect()->route('lichChieu')->with('status', 'Cập nhật thành công');
+}
     function themlichchieu(Request $request)
 {
     $cgv = DB::table('phim')
