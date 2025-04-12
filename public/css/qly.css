@@ -17,6 +17,7 @@
     background-color: #efe0e0;
     border-bottom: 1px solid #ccc;
     position: relative;
+    min-height: 50px;
 }
 .top-bar img 
 {
@@ -89,8 +90,9 @@ box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 visibility: hidden;
 opacity: 0;
 transform: translateX(-200px);
-z-index: 9998; /* Đảm bảo menu nằm trên cùng */
+z-index: 9998;
 transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+z-index: 990;
 }
 
 .side-menu.open 
@@ -98,6 +100,7 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
+
 }
 
 .menu-toggle 
@@ -139,6 +142,8 @@ transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
 {
     margin-left: 20px;
     padding: 20px;
+
+
 }
 /*--------------------- Phần thân -------------------------*/
 .timkiem_themmoi
@@ -245,4 +250,5 @@ body h2
 .hanh-dong form {
     display: inline-block; /* Giúp form không bị xuống dòng */
     margin: 0; /* Loại bỏ margin thừa */
+
 }
