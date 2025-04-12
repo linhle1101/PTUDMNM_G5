@@ -37,7 +37,7 @@ h2 {
 
 .table th {
     width: 20%; /* Cột tiêu đề chiếm 30% */
-    font-weight: bold;
+    font-weight: bold;  
     color: #333;
 }
 
@@ -58,16 +58,18 @@ select {
 }
 
 /* Suất chiếu (2 cột) */
+/* Suất chiếu (2 cột) */
 .suat-chieu-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột */
-    gap: 10px; /* Khoảng cách giữa các ô */
+    grid-template-columns: repeat(3, 1fr); /* Chia thành 2 cột */
+    gap: 15px; /* Khoảng cách giữa các ô */
     margin-top: 10px;
 }
 
 .suat-chieu-container .form-check {
     display: flex;
-    align-items: center;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
     background: #f9f9f9;
     padding: 14px;
     border: 1px solid #ddd;
@@ -80,32 +82,55 @@ select {
 }
 
 .suat-chieu-container .form-check-input {
-    margin-right: 10px;
+    margin-right: 10px; /* Khoảng cách giữa radio button và nhãn */
+    appearance: none; /* Loại bỏ giao diện mặc định của radio button */
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(5, 10, 16); /* Màu viền */
+    border-radius: 50%; /* Tạo hình tròn */
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.suat-chieu-container .form-check-input:checked {
+    background-color: #007bff; /* Màu nền khi được chọn */
+    border-color: #0056b3; /* Màu viền khi được chọn */
 }
 
 .suat-chieu-container .form-check-label {
     font-size: 14px;
     color: #333;
+    margin-left: 10px; /* Khoảng cách giữa nhãn và radio button */
 }
-
 /* Button */
-button[type="submit"],
-.btn-primary {
-    display: block;
-    margin: 20px auto 0;
-    background-color:rgb(1, 5, 8);
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 5px;
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
     font-size: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover,
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
 .btn-primary:hover {
     background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
 }
 
 /* Hộp thông báo lỗi */
@@ -173,7 +198,7 @@ button[type="submit"]:hover,
             <tr>
                 <th><label for="ngayChieu">Ngày chiếu</label></th>
                 <td>
-                    <input type="date" id="ngayChieu" class="form-control form-control-sm" name="ngayChieu" value="{{$cgv->ngayChieu}}">
+                    <input type="date" id="ngayChieu" class="form-control form-control-sm" name="ngayChieu" value="{{$cgv->ngayChieu}}" min="{{ date('Y-m-d') }}">
                 </td>
             </tr>
             <tr>
@@ -194,7 +219,7 @@ button[type="submit"]:hover,
                 <td>
                     <div class="suat-chieu-container">
                         @php
-                            $khungGioList = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'];
+                            $khungGioList = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00','23:00'];
                             $suatChieuHienTai = explode(',', $cgv->caChieu); // Giả sử caChieu lưu dạng chuỗi "08:00,10:00"
                         @endphp
 
@@ -214,9 +239,10 @@ button[type="submit"]:hover,
             </tr>
         </table>
 
-        <div style='text-align:center;'>
-            <input type='submit' class='btn btn-primary mt-1' value='Lưu'>
-        </div>
+        <div style="text-align: center; margin-top: 10px;">
+    <a href="{{ route('lichChieu') }}" class="btn btn-secondary">Hủy</a>
+    <input type="submit" class="btn btn-primary mt-1" value="Lưu">
+</div>
     </form>
 </div>
 </x-qly-layout>
