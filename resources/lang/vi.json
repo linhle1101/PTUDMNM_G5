@@ -7,5 +7,8 @@
 "Already registered?":"Bạn đã có tài khoản",
 "Register":"Đăng ký",
 "Log in":"Đăng nhập",
-"Forgot your password?":"Quên mật khẩu?"
+"Remember me":"Nhớ mật khẩu",
+"Forgot your password?":"Quên mật khẩu?",
+"forgot_password_description":"Bạn quên mật khẩu? Không sao cả. Vui lòng nhập email, chúng tôi sẽ gửi liên kết đặt lại mật khẩu cho bạn.",
+"send_reset_link":"Gửi liên kết đặt lại mật khẩu"
 }

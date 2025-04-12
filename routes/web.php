@@ -39,6 +39,7 @@ require __DIR__.'/auth.php';
 
 //Route::get('/login', [AuthenticatedSessionController::class, 'showLoginForm'])->name('login');
 //Route::post('/login', [AuthenticatedSessionController::class, 'login']);
+
 Route::get('/header', [HeaderController::class, 'show']);
 Route::get('/phim_dang_chieu', [PhimdangchieuController::class, 'index']);
 
@@ -51,4 +52,6 @@ Route::post('/thanh_toan/xu-ly', [ThanhToanController::class, 'handlePayment'])-
 Route::get('/qr', [QRController::class, 'index'])->name('qr');
 Route::post('/qr/confirm', [QRController::class, 'confirmPayment'])->name('qr.confirm');
 
-Route::post('/thanh_toan_thanh_cong', [ThanhToanThanhCongController::class, 'success'])->name('thanh_toan_thanh_cong.success');
+Route::get('/thanh_toan_thanh_cong', [ThanhToanThanhCongController::class, 'index']);
+Route::post('/thanh_toan_thanh_cong', [ThanhToanThanhCongController::class, 'index'])->name('thanh_toan_thanh_cong');
+Route::get('/testemail','App\Http\Controllers\ViduController@testemail');

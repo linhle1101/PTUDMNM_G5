@@ -592,12 +592,17 @@ color: #333;
 }
 /*thanh_toan-----------------------*/
 .card {
-  max-width: 600px; /* Tăng chiều rộng */
-  padding: 30px;
-  font-size: 18px; /* Tăng cỡ chữ */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng đẹp */
-
   
+  width: 80%;
+  max-width: 500px; /* Thu nhỏ khung */
+  padding: 20px;
+  border: 2px solid #000; /* Viền đen vuông góc */
+  border-radius: 10px; /* Không bo góc */
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease;
+  font-size: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng đẹp */
 }
 
 
@@ -712,7 +717,8 @@ h2.text-center {
     align-items: center;
     padding: 10px;
     width: 100%;
-    max-width: 1500px;
+    height: 100%;
+    max-width: 2200px;
 }
 .btn-payment:hover {
   background-color: #0056b3; /* Màu xanh đậm hơn khi hover */

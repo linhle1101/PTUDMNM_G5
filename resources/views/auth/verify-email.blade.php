@@ -1,8 +1,8 @@
-<x-guest-layout>
+<x-app-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <h2 class="text-7xl font-extrabold text-red-500 drop-shadow-md tracking-wide mb-4 -mt-6">{{ __('Verify email') }}</h2>
             </a>
         </x-slot>
 
@@ -36,4 +36,4 @@
             </form>
         </div>
     </x-auth-card>
-</x-guest-layout>
+</x-app-layout>

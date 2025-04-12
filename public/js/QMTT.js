@@ -1,8 +1,11 @@
-// qr.js
 document.addEventListener("DOMContentLoaded", function () {
     let timeRemaining = 5 * 60;
     const timerElement = document.getElementById("timer");
+    const btnConfirm = document.getElementById("confirmPayment");
+    const successMessage = document.getElementById("confirmationMessage");
+    const paymentForm = document.getElementById("paymentForm"); // Form gửi POST
 
+    // Bắt đầu đếm ngược
     const countdown = setInterval(function () {
         const minutes = Math.floor(timeRemaining / 60);
         const seconds = timeRemaining % 60;
@@ -15,22 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, 1000);
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const btnConfirm = document.getElementById("confirmPayment");
-      const successMessage = document.getElementById("confirmationMessage");
-  
-      btnConfirm.addEventListener("click", function () {
-          successMessage.style.display = "block"; // Hiển thị dòng chữ khi nhấn nút
-      });
-  });
-  
+    // Ẩn thông báo thành công lúc đầu
+    successMessage.style.display = "none";
 
-    document.getElementById("confirmPayment").addEventListener("click", function () {
-        document.getElementById("confirmationMessage").style.display = "block";
+    // Xử lý khi nhấn nút "Xác nhận thanh toán"
+    btnConfirm.addEventListener("click", function () {
+        clearInterval(countdown); // Dừng đếm ngược
+        timerElement.textContent = "Đã thanh toán";
+        successMessage.style.display = "block"; // Hiển thị dòng chữ thành công
 
-        // Sau 2 giây sẽ chuyển hướng sang trang thanh toán thành công
+        // Sau 2 giây sẽ gửi form POST thay vì chuyển trang bằng GET
         setTimeout(() => {
-            window.location.href = "/thanh-toan-thanh-cong";
+            paymentForm.submit();
         }, 2000);
     });
 });

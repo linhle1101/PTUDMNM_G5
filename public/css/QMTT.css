@@ -2,12 +2,11 @@
    
     body {
       margin: 0;
+      padding: 0;
     font-family: Arial, sans-serif;
-    display: flex;
-    height: 100vh;
+    height: 200%;
     background-color: #ffeb99; /* Nền màu vàng */
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;
 }
 /* Header */
 .navbar {
@@ -63,12 +62,17 @@
   text-decoration: underline;
 }
 
-    .container { 
-        display: flex; 
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Giảm khoảng trắng */
+  background: #fdf5e6 !important; 
+  width: 100%;
+  max-width: 2200px;
+
+}
     .sidebar { 
         width: 300px; 
         background-color: #a54088; 
@@ -80,9 +84,10 @@
       max-width: 500px; /* Thu nhỏ khung */
       padding: 20px;
       border: 2px solid #000; /* Viền đen vuông góc */
-      border-radius: 0; /* Không bo góc */
+      border-radius: 10px; /* Không bo góc */
       background-color: #fff;
       text-align: center;
+      transition: transform 0.3s ease;
   }
 
     .main { 
@@ -102,10 +107,13 @@
 
         h2 {
           font-size: 26px;
-          color: #c22323; /* Màu đỏ đô */
+          color: #981c96; /* Màu đỏ đô */
           font-weight: bold; /* Đậm hơn */
       }
-      
+      .timer{
+        color: rgb(31, 54, 229);
+       
+      }
       .payment-details {
           text-align: left;
       }

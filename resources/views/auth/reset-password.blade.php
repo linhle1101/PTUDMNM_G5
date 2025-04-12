@@ -1,8 +1,8 @@
-<x-guest-layout>
+<x-app-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <h2 class="text-8xl font-extrabold text-red-520 drop-shadow-md tracking-wide mb-4 -mt-6">{{ __('Xác thực mật khẩu') }}</h2>
             </a>
         </x-slot>
 
@@ -40,9 +40,9 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('Reset Password') }}
+                    {{ __('Đặt lại mật khẩu') }}
                 </x-button>
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</x-app-layout>
