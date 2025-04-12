@@ -24,10 +24,10 @@
                 </div>
             </div>
 
-            <div class="mb-3">
-                <label for="total_amount_tt" class="form-label">Tổng Cộng</label>
-                <input type="text" id="total_amount_tt" name="total_amount_tt" class="form-control total-amount"
-                    value="50,000 VNĐ" readonly>
+            <div class="mb-3"> 
+    <label for="total_amount_tt" class="form-label">Tổng Cộng</label>
+    <input type="text" id="total_amount_tt" name="total_amount_tt" class="form-control total-amount"
+        value="{{ number_format($tong_tien_ve, 0, ',', '.') }} VNĐ" readonly>
             </div>
 
             <div class="text-center">
@@ -36,7 +36,7 @@
 
             <div class="text-center ">
             
-                <a href="{{ url('/index.php') }}" class="btn btn-danger btn-cancel">Hủy Thanh Toán</a>
+                <a href="{{ url('/home') }}" class="btn btn-danger btn-cancel">Hủy Thanh Toán</a>
               
             </div>
         </form>

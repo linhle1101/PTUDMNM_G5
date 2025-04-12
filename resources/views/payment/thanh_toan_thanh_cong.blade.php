@@ -25,24 +25,28 @@
                 <h3 class="mt-4">Thông tin phim:</h3>
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <td><strong>Tên phim:</strong></td>
-                        <td>{{ $movies['ten_phim'] }}</td>
+                    <td><strong>Tên phim:</strong></td>
+                        <td>{{ $phim->ten_phim ?? 'Không xác định' }}</td>
                     </tr>
                     <tr>
                         <td><strong>Thời lượng:</strong></td>
-                        <td>{{ $movie['thoi_luong'] }}phút </td>
+                        <td>{{ $phims->thoi_luong ?? 'Không rõ' }} phút</td>
                     </tr>
                     <tr>
                         <td><strong>Mã vé:</strong></td>
-                        <td>{{ $ve_xem_phim['ma_ve'] }}</td>
+                        <td>{{ $ve_xem_phim->ma_ve ?? 'Không xác định' }}</td>
                     </tr>
                     <tr>
                         <td><strong>Ngày chiếu:</strong></td>
-                        <td>{{ $movies->ma_lich_chieu }}</td>
+                        <td>{{ $lich_chieu->ngayChieu ?? 'Không rõ' }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ca chiếu:</strong></td>
+                        <td>{{ $lich_chieu->caChieu ?? 'Không rõ' }}</td>
                     </tr>
                 </table>
 
-                <a href="{{ url('/') }}" class="btn btn-primary mt-4">Quay lại trang chủ</a>
+                <a href="{{ url('/home') }}" class="btn btn-primary mt-4">Quay lại trang chủ</a>
             </div>
         </div>
     </div>
