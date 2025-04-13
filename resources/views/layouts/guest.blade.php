@@ -12,6 +12,7 @@
 
         <!-- Scripts -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<<<<<<< HEAD
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
         <link rel="stylesheet" href="{{ asset('css/style_dangchieu.css') }}">

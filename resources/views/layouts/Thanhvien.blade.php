@@ -297,6 +297,64 @@ body {
             background-color: #ff3333;
             font-weight: bold;
         }
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fdf5e6 !important;
+  box-sizing: border-box;
+}
+
+/* Nếu có wrapper ngoài container */
+.wrapper, .main, .content, .tab-content {
+  background-color: #fdf5e6 !important;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fdf5e6; /* sửa từ white */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+  display: flex;
+  width: 100%;
+  background-color: #ff4d4d;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+}
+
+.tabs button {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 14px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-right: 1px solid #ff9999;
+}
+
+.tabs button:last-child {
+  border-right: none;
+}
+
+.tabs button:hover {
+  background-color: #e60000;
+}
+
+.tabs button.active {
+  background-color: #cc0000;
+}
 
         /* Nội dung tab */
         .tab-content {
@@ -339,8 +397,6 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1; /* Hiệu ứng hover */
 }
-
-
 
 /* Header */
 .navbar {
@@ -948,7 +1004,22 @@ h2.event-title::after {
   line-height: 1.5;
   color: #333;
 }
+.movie-selection {
+  background-color: #fdf5e6;
+  padding: 20px 0 0 0;
+  margin: 0;
+}
 
+.movie-title {
+  text-align: center;
+  font-size: 32px;
+  color: #cc0000;
+  margin-bottom: 30px;
+}
+
+html, body, .container, .tab-content, main, section, .wrapper {
+  background-color: #fdf5e6 !important;
+}
 
   </style>
 </head>

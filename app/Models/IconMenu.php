@@ -27,5 +27,4 @@ class IconMenu extends Model
 	];
 	 // ⚠️ Đảm bảo Laravel sử dụng đúng kết nối "lelin_cgv"
     protected $connection = 'lelin_cgv';
-
 }

@@ -28,6 +28,12 @@ use App\Http\Controllers\LichSuGiaoDichController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/lich-su-giao-dich', [LichSuGiaoDichController::class, 'index'])->name('lich-su-giao-dich.index');
+// routes/web.php
+
+use App\Http\Controllers\TransactionHistoryController;
+
+Route::get('/transaction-history', [TransactionHistoryController::class, 'transactionHistory'])->middleware('auth');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

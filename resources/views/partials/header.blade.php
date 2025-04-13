@@ -35,7 +35,6 @@
             <a href="#" class="active">VN</a> | <a href="#">EN</a>
         </div>
     </div>
-    
 </header>
 
 <section class="icon-menu">

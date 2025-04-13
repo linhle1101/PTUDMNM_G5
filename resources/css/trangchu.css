@@ -725,3 +725,152 @@ body {
   .btn-xem-them a:hover {
       background-color: #0056b3;
   }
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo img {
+  width: 150px;
+  height: auto;
+}
+
+.main-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.main-menu .nav-list {
+  display: flex;
+  gap: 30px;
+}
+
+.main-menu .nav-list li {
+  list-style: none;
+}
+
+.main-menu .nav-list li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.main-menu .nav-list li a:hover {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+/* Right section with login and language switch */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.auth a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.language-switch {
+  font-weight: bold;
+}
+
+.language-switch a {
+  text-decoration: none;
+  color: #333;
+}
+
+.language-switch a.active {
+  color: #ff5c5c;
+}
+
+/* Menu icons layout */
+.icon-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.icon-item {
+  text-align: center;
+  flex-basis: 20%;
+  min-width: 120px;
+}
+
+.icon-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* For smaller screens */
+@media screen and (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .main-menu {
+      flex-direction: column;
+  }
+
+  .icon-menu {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+/* Layout for icon menu */
+.icon-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  padding: 20px 30px;
+}
+
+.icon-item {
+  text-align: center;
+}
+
+.icon-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.icon-item p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+/* Adjust for small screen */
+@media screen and (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .main-menu .nav-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+
+  .right-section {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .icon-menu {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}

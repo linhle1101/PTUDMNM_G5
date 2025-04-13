@@ -9,7 +9,6 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-F9fg7z0zEOQyymClXHKjPBK50MDzk6+VZCyceYYrh63+VCdAzZMgUp2qK1U1uz6qMJcJcL9+0DCHPcICkK1CZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -37,7 +36,7 @@
             @include('partials.header')
 
             <!-- Nội dung trang -->
-            <main>
+            <main class main>
                 {{ $slot }}
             </main>
         </div>
