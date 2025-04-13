@@ -1,35 +1,31 @@
+
 <header class="header">
     <nav class="navbar">
-        <ul class="menu-list menu-trigger">
-            @foreach ($menu_items as $main_item => $items)
-                <li class="menu-item">
-                    <span class="main-item">{{ $main_item }}</span>
-                    @if (!empty($items['submenu']))
-                        <ul class="submenu dropdown-menu">
-                            @foreach ($items['submenu'] as $category => $data)
-                                <li class="submenu-category">
-                                    <a href="{{ url($data['link']) }}" class="category-title">{{ $category }}</a>
-                                    @if (!empty($data['submenu']))
-                                        <ul class="category-items">
-                                            @foreach ($data['submenu'] as $link => $title)
-                                                <li><a href="{{ url($link) }}">{{ $title }}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>
-            @endforeach
-        </ul>
-    </nav>
-
     <div class="logo">
-        <a href="{{ url('/') }}">
+        <a href="{{ url('/home') }}">
             <img src="{{ asset('images/logocgv.png') }}" alt="CGV Logo" />
         </a>
     </div>
+    </nav>
+       <nav class="main-menu">
+            <ul class="nav-list">
+                <li><a href="{{ url('/phim_dang_chieu') }}">PHIM ĐANG CHIẾU</a></li>
+                <li><a href="{{ url('/phim_sap_chieu') }}">PHIM SẮP CHIẾU</a></li>
+                <li><a href="{{ url('/thanhvien') }}">THÀNH VIÊN</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth">
+    @auth
+        <a href="{{ url('/thanhvien') }}">
+            <i class="fas fa-user-circle"></i>
+        </a>
+   
+    @else
+        <a href="{{ route('login') }}" style="text-decoration: none; font-weight: bold;">Đăng Nhập</a> /
+        <a href="{{ route('register') }}" style="text-decoration: none; font-weight: bold;">Đăng Ký</a>
+    @endauth
+</div>
 
     <div class="right-section">
         <div class="auth">
@@ -40,6 +36,7 @@
             <a href="#" class="active">VN</a> | <a href="#">EN</a>
         </div>
     </div>
+    
 </header>
 
 <section class="icon-menu">
