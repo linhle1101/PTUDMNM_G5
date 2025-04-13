@@ -1,22 +1,42 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class KhachHang extends Model
+/**
+ * Class Khachhang
+ * 
+ * @property int $maKH
+ * @property string $hoTen
+ * @property string $gioitinh
+ * @property string $email
+ * @property int $soDienThoai
+ * @property Carbon|null $ngaysinh
+ *
+ * @package App\Models
+ */
+class Khachhang extends Model
 {
-    use HasFactory;
+	protected $table = 'khachhang';
+	protected $primaryKey = 'maKH';
+	public $timestamps = false;
 
-    protected $table = 'khachhang'; // Chỉ định tên bảng
+	protected $casts = [
+		'soDienThoai' => 'int',
+		'ngaysinh' => 'datetime'
+	];
 
-    protected $primaryKey = 'maKH'; // Chỉ định khóa chính
-
-    public $incrementing = true; // Nếu maKH là AUTO_INCREMENT
-    protected $keyType = 'int'; // Kiểu dữ liệu của khóa chính
-
-    protected $fillable = [
-        'hoTen', 'gioitinh', 'email', 'soDienThoai', 'ngaysinh'
-    ];
+	protected $fillable = [
+		'hoTen',
+		'gioitinh',
+		'email',
+		'soDienThoai',
+		'ngaysinh'
+	];
 }
