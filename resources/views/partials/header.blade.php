@@ -1,7 +1,7 @@
 <header class="header">
     <nav class="navbar">
     <div class="logo">
-        <a href="{{ url('/home') }}">
+        <a href="{{ url('/') }}">
             <img src="{{ asset('images/logocgv.png') }}" alt="CGV Logo" />
         </a>
     </div>
@@ -14,7 +14,10 @@
             </ul>
         </nav>
 
-        <div class="auth">
+       
+
+    <div class="right-section">
+    <div class="auth">
     @auth
         <a href="{{ url('/thanhvien') }}">
             <i class="fas fa-user-circle"></i>
@@ -25,29 +28,10 @@
         <a href="{{ route('register') }}" style="text-decoration: none; font-weight: bold;">Đăng Ký</a>
     @endauth
 </div>
-
-    <div class="right-section">
-        <div class="auth">
-            <a href="#"></a> 
-            <a href="#"></a>
-        </div>
         <div class="language-switch">
             <a href="#" class="active">VN</a> | <a href="#">EN</a>
         </div>
     </div>
 </header>
 
-<section class="icon-menu">
-    @if ($icon_menu->count() > 0)
-        @foreach ($icon_menu as $item)
-            <div class="icon-item">
-                <a href="{{ $item->duong_dan_chi_tiet }}">
-                    <img src="{{ asset($item->duong_dan_hinh_anh) }}" alt="{{ $item->ten_muc }}" />
-                    <p>{{ $item->ten_muc }}</p>
-                </a>
-            </div>
-        @endforeach
-    @else
-        <p>Không có mục nào trong danh sách.</p>
-    @endif
-</section>
+

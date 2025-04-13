@@ -11,47 +11,6 @@
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         rel="stylesheet" />
-
-    <style>
-        .main-header {
-            background-color: #fff8e1;
-            border-bottom: 2px solid #000;
-            padding: 10px 0;
-        }
-
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        .logo img {
-            height: 40px;
-        }
-
-        .main-menu .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 40px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .main-menu .nav-list li a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #111;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .main-menu .nav-list li a:hover {
-            color: #e71a0f;
-        }
-    </style>
 </head>
 
 <body>

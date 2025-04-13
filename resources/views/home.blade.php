@@ -5,57 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV Movie Booking</title>
-    <link rel="stylesheet" href="{{ asset('css/trangchu.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/trangchu.css') }}" />
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         rel="stylesheet" />
     <style>
-        .main-header {
-            background-color: #fff8e1;
-            border-bottom: 2px solid #000;
-            padding: 10px 0;
-        }
 
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        .logo img {
-            height: 40px;
-        }
-
-        .main-menu .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 40px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .main-menu .nav-list li a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #111;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        .main-menu .nav-list li a:hover {
-            color: #e71a0f;
-        }
     </style>
 </head>
 
 <body>
 @include('partials.header')
 <section class="icon-menu">
-        @if ($iconMenus->count() > 0)
+    @if ($iconMenus->count() > 0)
         @foreach ($iconMenus as $icon)
         <div class="icon-item">
             <a href="{{ $icon->duong_dan_chi_tiet }}">
@@ -64,10 +27,8 @@
             </a>
         </div>
         @endforeach
-        @else
-        <p>Không có mục nào trong danh sách.</p>
-        @endif
-    </section>
+    @endif
+</section>
     <section class="movie-selection">
         <h2 class="movie-title">MOVIE SELECTION</h2>
         <div class="movie-container">

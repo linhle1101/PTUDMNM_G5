@@ -11,7 +11,6 @@ body {
     justify-content: space-between;
     background-color: #fdf5e6;
     padding: 10px 20px;
-    border-bottom: 2px solid black;
     position: relative;
   }
   
@@ -95,15 +94,6 @@ body {
     margin-left: auto;
   }
   
-  .auth a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-  
-  .auth a:hover {
-    color: red;
-  }
   
   .language-switch a {
     text-decoration: none;
@@ -189,26 +179,7 @@ body {
     font-weight: bold;
     margin: 0;
   }
-  /* Liên kết tổng quát */
-  .menu-list li a,
-  .submenu li a,
-  .auth a,
-  .language-switch a,
-  .dropdown-menu a {
-    text-decoration: none; /* Loại bỏ dấu gạch chân */
-    color: black; /* Màu chữ mặc định */
-    font-weight: bold;
-  }
-  
-  .menu-list li a:hover,
-  .submenu li a:hover,
-  .auth a:hover,
-  .language-switch a:hover,
-  .dropdown-menu a:hover {
-    color: red; /* Thay đổi màu khi hover */
-    text-decoration: none; /* Đảm bảo không có gạch chân khi hover */
-  }
-  
+ 
   /* Ngôn ngữ đang chọn (active state) */
   .language-switch a.active {
     color: red;
@@ -674,24 +645,14 @@ body {
   header 
   {
       display: flex;
-      background-color: #efe0e0;
+      background-color: #fdf5e6;
       border-bottom: 1px solid #ccc;
       position: relative;
       height:70px;
       justify-content: space-between;
+      border-bottom: 3px solid black;
   }
-  header img 
-  {
-      display: block;
-      width: 80%;
-      height: 40px;
-      margin: 10px 10px;
-  }
-  .imgacc
-  {
-      margin-left: auto;
-      width: 100px;
-  }
+
   header .logo
   {
       display: flex;
