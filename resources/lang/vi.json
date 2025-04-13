@@ -1,10 +1,14 @@
 {
-    "Name" : "Họ tên",
-    "Email" : "Email",
-    "Password" : "Mật khẩu",
-    "Confirm Password" : "Xác nhận lại mật khẩu",
-    "The email has already been taken" : "Email đã đăng ký",
-    "Already registered?":"Bạn đã có tài khoản",
-    "Register":"Đăng ký",
-    "Whoops! Something went wrong.":"Vui lòng nhập lại thông tin"
+"Name" : "Họ tên",
+"Email" : "Email",
+"Password" : "Mật khẩu",
+"Confirm Password" : "Xác nhận lại mật khẩu",
+"The email has already been taken" : "Email đã đăng ký",
+"Already registered?":"Bạn đã có tài khoản",
+"Register":"Đăng ký",
+"Log in":"Đăng nhập",
+"Remember me":"Nhớ mật khẩu",
+"Forgot your password?":"Quên mật khẩu?",
+"forgot_password_description":"Bạn quên mật khẩu? Không sao cả. Vui lòng nhập email, chúng tôi sẽ gửi liên kết đặt lại mật khẩu cho bạn.",
+"send_reset_link":"Gửi liên kết đặt lại mật khẩu"
 }

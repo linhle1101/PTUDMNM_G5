@@ -12,11 +12,31 @@
 
         <!-- Scripts -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('css/style_dangchieu.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style_sapchieu.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/MHTT.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/QMTT.css') }}">
+        
+ <script src="{{ asset('js/app.js') }}" defer></script>
+ <script src="{{ asset('js/menu.js') }}"></script>
+ <script src="{{ asset('js/MHTT.js') }}"></script>
+ <script src="{{ asset('js/QMTT.js') }}"></script>
+
+
+
     </head>
     <body>
+    @include('partials.header') <!-- Chèn Header ngay sau thẻ <body> -->
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
-    </body>
+
+    @include('partials.footer') <!-- Chèn Footer ngay trước </body> -->
+    <!-- Các nội dung khác -->
+    @stack('styles')
+    @stack('scripts')
+
+</body>
 </html>
