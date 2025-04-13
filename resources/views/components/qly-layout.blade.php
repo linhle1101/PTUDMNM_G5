@@ -11,6 +11,10 @@
     <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="{{asset('css/qly.css')}}">
+
+
+
+
 </head>
 
 <body>
@@ -37,7 +41,7 @@
                                 Xin chào <!--{{ Auth::user()->name }}-->
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="{{route('account')}}">Quản lý</a><li>
+                                    <li><a class="dropdown-item" href="#">Quản lý</a><li>
                                     <li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
