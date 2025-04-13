@@ -51,50 +51,35 @@
         }
     </style>
 </head>
-
 <body>
-@include('partials.header')
-<section class="icon-menu">
-        @if ($iconMenus->count() > 0)
-        @foreach ($iconMenus as $icon)
-        <div class="icon-item">
-            <a href="{{ $icon->duong_dan_chi_tiet }}">
-                <img src="{{ $icon->duong_dan_hinh_anh }}" alt="{{ $icon->ten_muc }}" />
-                <p>{{ $icon->ten_muc }}</p>
-            </a>
-        </div>
-        @endforeach
-        @else
-        <p>Không có mục nào trong danh sách.</p>
-        @endif
-    </section>
+<x-app-layout>
     <section class="movie-selection">
         <h2 class="movie-title">MOVIE SELECTION</h2>
         <div class="movie-container">
             @php
-            $limit = request()->query('limit', 4);
-            $displayedPhims = $phims->take($limit);
+                $limit = request()->query('limit', 4);
+                $displayedPhims = $phims->take($limit);
             @endphp
 
             @if ($displayedPhims->count() > 0)
-            @foreach ($displayedPhims as $phim)
-            <div class="movie-item">
-                <img src="{{ asset('admin/imgs/' . $phim->file_hinhAnh) }}" alt="{{ $phim->ten }}">
-                <h3>{{ $phim->ten }}</h3>
-                <div class="btn-group">
-                    <a href="{{ url('detail?ma_phim=' . $phim->ma_phim) }}" class="detail-btn">Xem chi tiết</a>
-                    <a href="{{ url('muave?ma_phim=' . $phim->ma_phim) }}" class="buy-btn">Mua vé</a>
+                @foreach ($displayedPhims as $phim)
+                <div class="movie-item">
+                    <img src="{{ asset('admin/imgs/' . $phim->file_hinhAnh) }}" alt="{{ $phim->ten }}">
+                    <h3>{{ $phim->ten }}</h3>
+                    <div class="btn-group">
+                        <a href="{{ url('detail?ma_phim=' . $phim->ma_phim) }}" class="detail-btn">Xem chi tiết</a>
+                        <a href="{{ url('muave?ma_phim=' . $phim->ma_phim) }}" class="buy-btn">Mua vé</a>
+                    </div>
                 </div>
-            </div>
-            @endforeach
+                @endforeach
 
-            @if ($phims->count() > $limit)
-            <div class="btn-xem-them">
-                <a href="{{ url()->current() . '?limit=' . ($limit + 4) }}">Xem thêm</a>
-            </div>
-            @endif
+                @if ($phims->count() > $limit)
+                <div class="btn-xem-them">
+                    <a href="{{ url()->current() . '?limit=' . ($limit + 4) }}">Xem thêm</a>
+                </div>
+                @endif
             @else
-            <p>Không có phim nào đang chiếu.</p>
+                <p>Không có phim nào đang chiếu.</p>
             @endif
         </div>
     </section>
@@ -121,9 +106,7 @@
             @endif
         </div>
     </section>
-
-    @include('partials.footer')
-
+    </x-app-layout>
 </body>
 
 </html>

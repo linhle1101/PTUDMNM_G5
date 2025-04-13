@@ -39,9 +39,10 @@
             <main class main>
                 {{ $slot }}
             </main>
+            @include('partials.footer') <!-- Nhúng Footer -->
         </div>
 
-        @include('partials.footer') <!-- Nhúng Footer -->
+    
 
         
 
