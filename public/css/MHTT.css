@@ -8,7 +8,7 @@ body {
   background-color: #fdf5e6;
 }
 /* Header */
-    .navbar {
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -201,7 +201,7 @@ body {
 .dropdown-menu.show {
   display: block; /* Hiển thị menu khi thêm lớp show */
 }
-* Liên kết tổng quát */ .menu-list li a,
+/* Liên kết tổng quát */ .menu-list li a,
 .submenu li a,
 .auth a,
 .language-switch a,

@@ -4,9 +4,6 @@
     background-color: #fdf5e6;
   }
   
-  .navbar {
-    position: relative;
-}
 
   /* Header */
   .header {
@@ -25,7 +22,7 @@
     height: 20px;
     width: auto;
     margin-left: 5px;
-    margin-top: -20px;
+    margin-top: 5px;
   }
   
   .menu-trigger {
@@ -366,11 +363,13 @@ input {
 
 
 .navbar {
+  position: relative;
   background-color: #fdf5e6;
-  padding: 10px 40px;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 50px;
 }
 
 .navbar-left {
@@ -397,7 +396,7 @@ input {
           margin: 0;
           padding: 0;
           text-align: right;
-          margin-left: 75px;
+          margin-left: 50px;
       }
       .auth{
         margin-left: 85px;

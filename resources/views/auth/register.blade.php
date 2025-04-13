@@ -2,10 +2,8 @@
 
 <x-app-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+    <x-slot name="logo">
+                <h2 class="text-red-600 text-2xl font-bold">ĐĂNG KÝ</h2>
         </x-slot>
 
         <!-- Validation Errors -->

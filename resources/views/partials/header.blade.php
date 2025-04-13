@@ -19,10 +19,18 @@
     <div class="right-section">
     <div class="auth">
     @auth
-        <a href="{{ url('/thanhvien') }}">
+    <a href="{{ url('/thanhvien') }}">
             <i class="fas fa-user-circle"></i>
         </a>
-   
+    <a href="{{ route('logout') }}"
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+           style="text-decoration: none; font-weight: bold; margin-left: 10px;">
+            Đăng Xuất
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     @else
         <a href="{{ route('login') }}" style="text-decoration: none; font-weight: bold;">Đăng Nhập</a> /
         <a href="{{ route('register') }}" style="text-decoration: none; font-weight: bold;">Đăng Ký</a>
