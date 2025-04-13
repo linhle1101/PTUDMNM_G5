@@ -133,11 +133,12 @@ html, body, .container, .tab-content, main, section, .wrapper {
   </style>
 </head>
 <body>
+
   <section class="icon-menu"></section>
 
-  <section class="movie-selection">
+  <section class="movie-selection" style ="min-height:100vh">
   <h2 class="movie-title">CGV MEMBERSHIP</h2>
-  <div class="tab-wrapper">
+  <div class="tab-wrapper" style ="min-height:100vh">
     <div class="tabs">
       <button class="active" onclick="showTab('birthday', this)">Quà tặng sinh nhật</button>
       <button onclick="showTab('account', this)">Quản Lý Tài Khoản</button>

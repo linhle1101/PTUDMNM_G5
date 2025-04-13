@@ -26,12 +26,7 @@
         <script src="{{ asset('js/menu.js') }}"></script>
         
         <script src="{{ asset('js/QMTT.js') }}"></script>-->
-<style>
-    main {
-  background-color: #fdf5e6 !important;
-}
 
-    </style>
 
         
     </head>

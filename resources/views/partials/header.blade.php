@@ -1,40 +1,21 @@
+,
 <header class="header">
-    <nav class="navbar">
-        <ul class="menu-list menu-trigger">
-            @foreach ($menu_items as $main_item => $items)
-                <li class="menu-item">
-                    <span class="main-item">{{ $main_item }}</span>
-                    @if (!empty($items['submenu']))
-                        <ul class="submenu dropdown-menu">
-                            @foreach ($items['submenu'] as $category => $data)
-                                <li class="submenu-category">
-                                    <a href="{{ url($data['link']) }}" class="category-title">{{ $category }}</a>
-                                    @if (!empty($data['submenu']))
-                                        <ul class="category-items">
-                                            @foreach ($data['submenu'] as $link => $title)
-                                                <li><a href="{{ url($link) }}">{{ $title }}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>
-            @endforeach
-        </ul>
-    </nav>
-
     <div class="logo">
-        <a href="{{ url('/') }}">
-            <img src="{{ asset('images/logocgv.png') }}" alt="CGV Logo" />
+        <a href="{{url('/')}}">
+            <img src="{{ asset('images/logocgv.png') }}" alt="CGV Logo">
         </a>
     </div>
-
+    <nav class="main-menu">
+        <ul>
+            <li><a href="{{ url('/phim-dang-chieu') }}">PHIM ĐANG CHIẾU</a></li>
+            <li><a href="{{ url('/phim-sap-chieu') }}">PHIM SẮP CHIẾU</a></li>
+            <li><a href="{{ url('/thanh-vien') }}">THÀNH VIÊN</a></li>
+        </ul>
+    </nav>
     <div class="right-section">
         <div class="auth">
-            <a href="#"></a> 
-            <a href="#"></a>
+            <a href="#">Đăng Nhập</a> /
+            <a href="#">Đăng Ký</a>
         </div>
         <div class="language-switch">
             <a href="#" class="active">VN</a> | <a href="#">EN</a>
