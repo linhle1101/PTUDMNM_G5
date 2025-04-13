@@ -1,11 +1,8 @@
 <x-app-layout>  
     <x-auth-card class="w-full max-w-xl bg-white p-8 rounded-xl shadow-xl transform scale-105"> 
         <x-slot name="logo">
-            <a href="/">
-            <h2 class="text-7xl font-extrabold text-red-500 drop-shadow-md tracking-wide mb-4 -mt-6">{{ __('Forgot your password?') }}</h2>
-            </a>
+                <h2 class="text-red-600 text-2xl font-bold mb-4 -mt-6">{{ __('Forgot your password?') }}</h2>
         </x-slot>
-
         <div class="mb-4 text-sm text-gray-600">
             {{ __('forgot_password_description') }}
         </div>

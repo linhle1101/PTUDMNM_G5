@@ -50,7 +50,7 @@ class DatVeController extends Controller
 
             session()->forget('selected_seats');
 
-            return redirect()->route('home')->with('success', 'Đặt vé thành công!');
+            return redirect()->route('thanh_toan')->with('success', 'Đặt vé thành công!');
         } catch (\Exception $e) {
             Log::error('Lỗi khi đặt vé: ' . $e->getMessage(), [
                 'line' => $e->getLine(),

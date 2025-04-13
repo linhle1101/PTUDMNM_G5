@@ -1,8 +1,9 @@
+
 <x-app-layout>
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card shadow-lg p-4" style="width: 600px;">
             <div class="card-body text-center">
-                <h1 class="display-4 text-success">Đặt vé thành công!</h1>
+                <h3 class="display-4 text-success">Đặt vé thành công!</h3>
 
                 <h3 class="mt-4">Thông tin khách hàng:</h3>
                 <table class="table table-bordered table-striped">
@@ -46,7 +47,7 @@
                     </tr>
                 </table>
 
-                <a href="{{ url('/home') }}" class="btn btn-primary mt-4">Quay lại trang chủ</a>
+                <a href="{{ url('/') }}" class="btn btn-primary mt-4">Quay lại trang chủ</a>
             </div>
         </div>
     </div>

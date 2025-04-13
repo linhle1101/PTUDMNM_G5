@@ -14,7 +14,7 @@
 </head>
 
 <body>
-@include('partials.header')
+<x-app-layout>
     <main>
         <div class="movie-details">
             <div class="movie-poster">
@@ -159,7 +159,7 @@
 
 
     </main>
-    @include('partials.footer')
+</x-app-layout>
 
 </body>
 <script>

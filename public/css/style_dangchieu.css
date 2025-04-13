@@ -361,7 +361,7 @@ margin-bottom:0px;
 
         .movie-container
         {
-            display:grid;
+            display:flex;
             grid-template-columns: repeat(5, 1fr);
            
            justify-content: center; /* Căn giữa */

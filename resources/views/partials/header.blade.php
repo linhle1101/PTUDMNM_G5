@@ -10,7 +10,7 @@
             <ul class="nav-list">
                 <li><a href="{{ url('/phim_dang_chieu') }}">PHIM ĐANG CHIẾU</a></li>
                 <li><a href="{{ url('/phim_sap_chieu') }}">PHIM SẮP CHIẾU</a></li>
-                <li><a href="{{ url('/thanhvien') }}">THÀNH VIÊN</a></li>
+                <li><a href="{{ url('/Thanhvien') }}">THÀNH VIÊN</a></li>
             </ul>
         </nav>
 
@@ -19,7 +19,7 @@
     <div class="right-section">
     <div class="auth">
     @auth
-    <a href="{{ url('/thanhvien') }}">
+    <a href="{{ url('/Thanhvien') }}">
             <i class="fas fa-user-circle"></i>
         </a>
     <a href="{{ route('logout') }}"
@@ -41,5 +41,20 @@
         </div>
     </div>
 </header>
+
+<section class="icon-menu">
+    @if ($icon_menu->count() > 0)
+        @foreach ($icon_menu as $item)
+            <div class="icon-item">
+                <a href="{{ $item->duong_dan_chi_tiet }}">
+                    <img src="{{ asset($item->duong_dan_hinh_anh) }}" alt="{{ $item->ten_muc }}" />
+                    <p>{{ $item->ten_muc }}</p>
+                </a>
+            </div>
+        @endforeach
+    @else
+        <p>Không có mục nào trong danh sách.</p>
+    @endif
+</section>
 
 

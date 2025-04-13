@@ -26,9 +26,9 @@
             display: inline-block;
             margin-top: 20px;
             padding: 12px 24px;
-            background-color: #1a73e8;
-            color: white;
+            background-color:rgb(232, 26, 26);
             text-decoration: none;
+            color: #fff !important;
             border-radius: 6px;
             font-weight: bold;
         }
@@ -47,7 +47,7 @@
         <p>Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu cho tài khoản của bạn.</p>
         <p>Vui lòng nhấn vào nút bên dưới để tiếp tục quá trình đặt lại mật khẩu:</p>
 
-        <a href="{{ $url }}" class="btn">Đặt lại mật khẩu</a>
+        <a href="{{ $url }}" class="btn" >Đặt lại mật khẩu</a>
 
         <p>Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này.</p>
 

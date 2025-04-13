@@ -263,30 +263,37 @@ body {
 
         /* Container chính */
         .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Chắc chắn nội dung không bị tràn */
+          display: flex;
+          flex-direction: column;
+          max-width: 900px;
+          margin: 0 auto;
+          background: #fdf5e6; /* sửa từ white */
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Tabs */
         .tabs {
-            display: flex;
-            border-bottom: 1px solid #ddd;
+          display: flex;
+
+          width: 100%;
+          background-color: #ff4d4d;
+          border-radius: 6px 6px 0 0;
+          overflow: hidden;
         }
 
         .tabs button {
-            flex: 1;
-            padding: 10px;
-            background-color: #ff4d4d;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
+          flex: 1;
+          border: none;
+          background-color: transparent;
+          color: white;
+          font-weight: bold;
+          font-size: 16px;
+          padding: 14px 0;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          border-right: 1px solid #ff9999;
         }
 
         .tabs button:hover {
@@ -1044,7 +1051,6 @@ html, body, .container, .tab-content, main, section, .wrapper {
         <button onclick="showTab('support', this)">Ban Cần Hỗ Trợ</button>
         <button onclick="showTab('points', this)">Chương trình điểm thưởng</button>
     </div>
-
     <!-- Nội dung của từng tab -->
 
     <div id="birthday" class="tab-content active">

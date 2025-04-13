@@ -1,0 +1,14 @@
+/* ========== Fonts & Reset ========== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* ========== Layout ========== */
+@import url('style.css'); /* Header + Footer */
+
+/* ========== Pages ========== */
+@import url('style_dangchieu.css');  
+@import url('style_sapchieu.css');    
+@import url('stylett.css');           /* Giao diện Thanh Toán */ /* Giao diện Phim Đang Chiếu *//* Giao diện Phim Sắp Chiếu */
+
+/* ========== Components (màn hình chi tiết) ========== */
+@import url('MHTT.css');              /* Thanh toán thành công */
+@import url('QMTT.css');              /* QR màn thanh toán */
