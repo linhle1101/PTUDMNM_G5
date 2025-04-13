@@ -33,7 +33,7 @@
         
     </head>
     <body class="font-sans antialiased">
-        <div class="bg-gray-100 py-8">
+        <div class="min-h-screen bg-gray-100">
             @include('partials.header')
 
             <!-- Nội dung trang -->

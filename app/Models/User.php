@@ -47,4 +47,3 @@ class User extends Authenticatable
     $this->notify(new CustomResetPass($token));
 }
 }
-

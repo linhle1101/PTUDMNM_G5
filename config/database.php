@@ -76,7 +76,6 @@ return [
         'strict' => false,
         'engine' => null,
     ],
-    
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),

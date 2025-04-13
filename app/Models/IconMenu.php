@@ -1,16 +1,31 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class IconMenu
+ * 
+ * @property int $id
+ * @property string $ten_muc
+ * @property string|null $duong_dan_hinh_anh
+ * @property string|null $duong_dan_chi_tiet
+ * @property string|null $mo_ta
+ *
+ * @package App\Models
+ */
 class IconMenu extends Model
 {
-    protected $table = 'icon_menu';
+	protected $table = 'icon_menu';
+	public $timestamps = false;
 
-    // ⚠️ Đảm bảo Laravel sử dụng đúng kết nối "lelin_cgv"
+	protected $fillable = [
+		'ten_muc',
+		'duong_dan_hinh_anh',
+		'duong_dan_chi_tiet',
+		'mo_ta'
+	];
+	 // ⚠️ Đảm bảo Laravel sử dụng đúng kết nối "lelin_cgv"
     protected $connection = 'lelin_cgv';
 
-    // Nếu không dùng created_at/updated_at trong bảng
-    public $timestamps = false;
 }

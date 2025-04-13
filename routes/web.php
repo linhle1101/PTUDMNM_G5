@@ -11,8 +11,9 @@ use App\Http\Controllers\ThanhToanController;
 use App\Http\Controllers\QRController;
 use App\Http\Controllers\ThanhToanThanhCongController;
 use App\Http\Controllers\QLLC\LichChieuController;
-
-
+use App\Http\Controllers\CGVController;
+use App\Http\Controllers\DatVeController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,10 +24,10 @@ use App\Http\Controllers\QLLC\LichChieuController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\LichSuGiaoDichController;
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name("home");
+Route::get('/lich-su-giao-dich', [LichSuGiaoDichController::class, 'index'])->name('lich-su-giao-dich.index');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -98,3 +99,13 @@ Route::get('/suanhanvien/{maNV}','App\Http\Controllers\NhanvienController@suanha
 
 Route::post('/nhanvien/save/{action}','App\Http\Controllers\NhanvienController@nhanviensave'
 )/*->middleware('auth')*/->name("nhanviensave");
+Route::get('/Thanhvien','App\Http\Controllers\CGVController@Thanhvien');
+Route::get('/accountpanel','App\Http\Controllers\AccountController@accountpanel')->middleware('auth')->name("account");
+Route::post('/saveaccountinfo','App\Http\Controllers\AccountController@saveaccountinfo')->middleware('auth')->name('saveinfo');
+
+Route::get('/header-footer', [CGVController::class, 'headerfooter'])->name('headerfooter');
+Route::get('/history', [LichSuGiaoDichController::class, 'index'])->name('transaction.history');
+
+Route::get('/muave', [HomeController::class, 'muave'])->name('muave');
+Route::post('/muave/ajax', [HomeController::class, 'muaveAjax'])->name('muave.ajax');
+Route::post('/datve/luu', [DatVeController::class, 'luuVe'])->name('datve.luu');
