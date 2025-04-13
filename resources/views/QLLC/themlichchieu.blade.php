@@ -1,8 +1,8 @@
 
 <head>
     <style>
-/* Container chính */
-.form-container {
+        
+        .form-container {
     width: 70%; /* Tăng chiều rộng của form */
     margin: 50px auto;
     padding: 30px;
@@ -23,13 +23,13 @@ h2 {
 }
 
 /* Bảng */
-.table {
+.bang {
     width: 100%; /* Chiếm toàn bộ chiều rộng của container */
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-.table th, .table td {
+.bang th, .bang td {
     padding: 15px; /* Tăng khoảng cách bên trong ô */
     text-align: left;
     vertical-align: center;
@@ -37,13 +37,13 @@ h2 {
     padding-right: 1px; /* Thêm khoảng cách bên trái */
 }
 
-.table th {
+.bang th {
     width: 20%; /* Cột tiêu đề chiếm 30% */
     font-weight: bold;
     color: #333;
 }
 
-.table td {
+.bang td {
     width: 70%; /* Cột nội dung chiếm 70% */
 }
 
@@ -62,19 +62,22 @@ select {
 /* Suất chiếu (2 cột) */
 .suat-chieu-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Chia thành 2 cột */
-    gap: 10px; /* Khoảng cách giữa các ô */
+    grid-template-columns: repeat(3, 1fr); /* Chia thành 2 cột */
+    gap: 15px; /* Khoảng cách giữa các ô */
     margin-top: 10px;
 }
 
 .suat-chieu-container .form-check {
     display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
     align-items: center;
     background: #f9f9f9;
     padding: 14px;
     border: 1px solid #ddd;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    padding: 10px;
 }
 
 .suat-chieu-container .form-check:hover {
@@ -82,32 +85,53 @@ select {
 }
 
 .suat-chieu-container .form-check-input {
-    margin-right: 10px;
+    margin-right: 20px;
+    margin-left: 10px;
+    appearance: none; /* Loại bỏ giao diện mặc định của radio button */
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(5, 10, 16); /* Màu viền */
+    border-radius: 50%; /* Tạo hình tròn */
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
 }
+
 
 .suat-chieu-container .form-check-label {
     font-size: 14px;
     color: #333;
 }
 
-/* Button */
-button[type="submit"],
-.btn-primary {
-    display: block;
-    margin: 5px auto 0;
-    background-color:rgb(5, 6, 7);
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 5px;
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
     font-size: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover,
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
 .btn-primary:hover {
-    background-color:rgb(5, 6, 7);
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
 }
 
 /* Hộp thông báo lỗi */
@@ -129,6 +153,9 @@ button[type="submit"]:hover,
     margin-bottom: 10px;
 }
     </style>
+<meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Thêm Lịch Chiếu</title>
 </head>
 <x-qly-layout>
 @if ($errors->any())
@@ -153,7 +180,7 @@ button[type="submit"]:hover,
     <form method="post" action="{{route('them')}}" enctype="multipart/form-data">
         {{ csrf_field() }}
 
-        <table class="table">
+        <table class="bang">
             <tr>
                 <th><label for="ma_phim">Mã phim</label></th>
                 <td>
@@ -170,7 +197,7 @@ button[type="submit"]:hover,
             <tr>
                 <th><label for="ngayChieu">Ngày chiếu</label></th>
                 <td>
-                    <input type="date" id="ngayChieu" class="form-control form-control-sm" name="ngayChieu" value="">
+                    <input type="date" id="ngayChieu" class="form-control form-control-sm" name="ngayChieu" value=""  min="{{ date('Y-m-d') }}">
                 </td>
             </tr>
             <tr>
@@ -191,7 +218,7 @@ button[type="submit"]:hover,
                 <td>
                     <div class="suat-chieu-container">
                         @php
-                            $khungGioList = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'];
+                            $khungGioList = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00','23:00'];
                             $suatChieuHienTai = $caChieu ? explode(',', $caChieu) : [];
                         @endphp
 
@@ -208,11 +235,17 @@ button[type="submit"]:hover,
                         @endforeach
                     </div>
                 </td>
+                
+                    
+              
             </tr>
         </table>
 </div>
 {{ csrf_field() }}
-<div style='text-align:center;'><input type='submit' class='btn btn-primary mt-1' value='Lưu'></div>
+<div style="text-align: center; margin-top: 10px;">
+    <a href="{{ route('lichChieu') }}" class="btn btn-secondary">Hủy</a>
+    <input type="submit" class="btn btn-primary mt-1" value="Lưu">
+</div>
 </form>
 
 </x-qly-layout>
