@@ -1,0 +1,82 @@
+
+.body h1
+{
+    font-weight: bold;
+    text-align: center;
+    color: #d22121;
+}
+.hanh-dong a 
+{
+    text-decoration: none;
+    color:#000;
+}
+
+.hanh-dong a:hover
+{
+    text-decoration: underline;
+}
+.hanh-dong {
+    white-space: nowrap; /* Ngăn chặn xuống dòng */
+    display: flex; /* Hiển thị các phần tử trên cùng một hàng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 5px; /* Tạo khoảng cách giữa các nút */
+}
+.hanh-dong form {
+    display: inline-block; /* Giúp form không bị xuống dòng */
+    margin: 0; /* Loại bỏ margin thừa */
+}
+
+.tab {
+    display: flex; /* Sử dụng flex để căn chỉnh ngang */
+    justify-content: space-between; /* Tách đều hai phần sang hai bên */
+    align-items: center; /* Căn giữa theo chiều dọc */ 
+    padding: 10px 120px; /* Cách đều hai bên và bên trên/dưới */
+}
+
+
+.user-info
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+.taikhoan
+{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: 50px;
+    flex-direction: row;
+}
+
+ /* thêm mới tìm kiếm */
+ .timkiem, .them-nhan-vien {
+    display: inline-block;
+    vertical-align: middle;
+}
+.them-nhan-vien {
+    margin-left: 500px;
+}
+.timkiem
+{
+    margin-left: 50px;
+}
+table#cgv-table{
+    text-align: center;
+    vertical-align: middle;
+    border-collapse: collapse;
+    margin-top: 20px;
+    z-index: 1 !important; /* Đảm bảo bảng không che menu */
+}
+
+table#cgv-table td, table#cgv-table th {
+    border: 1px solid #000;
+    padding:10px;
+}
+
+table#cgv-table th{
+    vertical-align: middle;
+    background-color: darkgray;
+    text-align: center;
+}
